@@ -131,12 +131,17 @@
       transform: translateY(-1px);
     }
 
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 10px 24px rgba(51, 60, 142, 0.28);
-    }
-
+  .btn-primary {
+  background: var(--primary);
+  color: var(--bg);
+  box-shadow: 0 10px 24px rgba(51, 60, 142, 0.28);
+  border: none;
+}
+  .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(51, 60, 142, 0.35);
+}
+    
     .btn-secondary {
       background: white;
       color: var(--primary);
@@ -864,7 +869,7 @@
     <div class="container nav">
       <div class="brand">
         <a href="#" class="brand-title">WaffEle</a>
-        <span class="brand-sub">desayunos y meriendas con proteína</span>
+        <span class="brand-sub">Tus desayunos y meriendas ahora con un plus de proteína</span>
       </div>
 
       <nav class="nav-links">
@@ -1418,7 +1423,7 @@
         }
       });
 
-      return `Hola! Quiero pedir en WaffEle:%0A%0A${packName}%0A- Total de unidades: ${packSize}%0A${selectedFlavors.join("%0A")}%0A%0ATotal: $${formatPrice(packPrice)}%0A%0AMi nombre:%0AForma de entrega:%0A`;
+      return `Hola! Quiero pedir en WaffEle:%0A%0A${packName}%0A- Total de unidades: ${packSize}%0A${selectedFlavors.join("%0A")}%0A%0ATotal: $${formatPrice(packPrice)}%0A%0AForma de entrega:%0A`;
     }
 
     document.querySelectorAll(".pack-card").forEach(packCard => {
