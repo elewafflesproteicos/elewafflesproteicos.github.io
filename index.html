@@ -513,34 +513,49 @@
       color: var(--muted);
     }
 
-    .qty-controls {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 6px;
-    }
+  .qty-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
 
-    .qty-btn {
-      width: 34px;
-      height: 34px;
-      border: 0;
-      border-radius: 999px;
-      background: var(--bg);
-      color: var(--primary);
-      font-size: 20px;
-      font-weight: 700;
-      cursor: pointer;
-    }
+.qty-input {
+  width: 60px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--primary);
+  background: white;
+}
 
-    .qty-value {
-      min-width: 18px;
-      text-align: center;
-      font-weight: 800;
-      color: var(--deep);
-    }
+.qty-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(51, 60, 142, 0.10);
+}
+
+.qty-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.qty-btn:hover {
+  background: #f8f8f8;
+}
 
     .pack-footer {
       display: flex;
@@ -1026,48 +1041,48 @@
           <span class="tag">20g proteína c/u</span>
         </div>
 
-        <div class="selector-box">
-          <div class="selector-head">
-            <strong>Elegí tus sabores</strong>
-            <span class="counter-summary">0 / 6 unidades</span>
-          </div>
+<div class="selector-box">
+  <div class="selector-head">
+    <strong>Elegí tus sabores</strong>
+    <span class="counter-summary">0 / 6 unidades</span>
+  </div>
 
-          <div class="flavor-row" data-flavor="Clásico">
-            <div class="flavor-name"><strong>Clásico</strong></div>
-            <div class="qty-controls">
-              <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
-              <button class="qty-btn plus" type="button">+</button>
-            </div>
-          </div>
+  <div class="flavor-row" data-flavor="Clásico">
+    <div class="flavor-name"><strong>Clásico</strong></div>
+    <div class="qty-controls">
+      <button class="qty-btn minus" type="button">−</button>
+      <input class="qty-input" type="number" min="0" value="0" inputmode="numeric">
+      <button class="qty-btn plus" type="button">+</button>
+    </div>
+  </div>
 
-          <div class="flavor-row" data-flavor="Vainilla">
-            <div class="flavor-name"><strong>Vainilla</strong></div>
-            <div class="qty-controls">
-              <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
-              <button class="qty-btn plus" type="button">+</button>
-            </div>
-          </div>
+  <div class="flavor-row" data-flavor="Vainilla">
+    <div class="flavor-name"><strong>Vainilla</strong></div>
+    <div class="qty-controls">
+      <button class="qty-btn minus" type="button">−</button>
+      <input class="qty-input" type="number" min="0" value="0" inputmode="numeric">
+      <button class="qty-btn plus" type="button">+</button>
+    </div>
+  </div>
 
-          <div class="flavor-row" data-flavor="Banana">
-            <div class="flavor-name"><strong>Banana</strong></div>
-            <div class="qty-controls">
-              <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
-              <button class="qty-btn plus" type="button">+</button>
-            </div>
-          </div>
+  <div class="flavor-row" data-flavor="Banana">
+    <div class="flavor-name"><strong>Banana</strong></div>
+    <div class="qty-controls">
+      <button class="qty-btn minus" type="button">−</button>
+      <input class="qty-input" type="number" min="0" value="0" inputmode="numeric">
+      <button class="qty-btn plus" type="button">+</button>
+    </div>
+  </div>
 
-          <div class="flavor-row" data-flavor="Cacao y banana">
-            <div class="flavor-name"><strong>Cacao y banana</strong></div>
-            <div class="qty-controls">
-              <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
-              <button class="qty-btn plus" type="button">+</button>
-            </div>
-          </div>
-        </div>
+  <div class="flavor-row" data-flavor="Cacao y banana">
+    <div class="flavor-name"><strong>Cacao y banana</strong></div>
+    <div class="qty-controls">
+      <button class="qty-btn minus" type="button">−</button>
+      <input class="qty-input" type="number" min="0" value="0" inputmode="numeric">
+      <button class="qty-btn plus" type="button">+</button>
+    </div>
+  </div>
+</div>
 
         <div class="pack-footer">
           <div class="validation"></div>
@@ -1093,48 +1108,48 @@
           <span class="tag">20g proteína c/u</span>
         </div>
 
-        <div class="selector-box">
-          <div class="selector-head">
-            <strong>Elegí tus sabores</strong>
-            <span class="counter-summary">0 / 14 unidades</span>
-          </div>
+    <div class="selector-box">
+  <div class="selector-head">
+    <strong>Elegí tus sabores</strong>
+    <span class="counter-summary">0 / 14 unidades</span>
+  </div>
 
-          <div class="flavor-row" data-flavor="Clásico">
-            <div class="flavor-name"><strong>Clásico</strong></div>
-            <div class="qty-controls">
-              <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
-              <button class="qty-btn plus" type="button">+</button>
-            </div>
-          </div>
+  <div class="flavor-row" data-flavor="Clásico">
+    <div class="flavor-name"><strong>Clásico</strong></div>
+    <div class="qty-controls">
+      <button class="qty-btn minus" type="button">−</button>
+      <input class="qty-input" type="number" min="0" value="0" inputmode="numeric">
+      <button class="qty-btn plus" type="button">+</button>
+    </div>
+  </div>
 
-          <div class="flavor-row" data-flavor="Vainilla">
-            <div class="flavor-name"><strong>Vainilla</strong></div>
-            <div class="qty-controls">
-              <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
-              <button class="qty-btn plus" type="button">+</button>
-            </div>
-          </div>
+  <div class="flavor-row" data-flavor="Vainilla">
+    <div class="flavor-name"><strong>Vainilla</strong></div>
+    <div class="qty-controls">
+      <button class="qty-btn minus" type="button">−</button>
+      <input class="qty-input" type="number" min="0" value="0" inputmode="numeric">
+      <button class="qty-btn plus" type="button">+</button>
+    </div>
+  </div>
 
-          <div class="flavor-row" data-flavor="Banana">
-            <div class="flavor-name"><strong>Banana</strong></div>
-            <div class="qty-controls">
-              <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
-              <button class="qty-btn plus" type="button">+</button>
-            </div>
-          </div>
+  <div class="flavor-row" data-flavor="Banana">
+    <div class="flavor-name"><strong>Banana</strong></div>
+    <div class="qty-controls">
+      <button class="qty-btn minus" type="button">−</button>
+      <input class="qty-input" type="number" min="0" value="0" inputmode="numeric">
+      <button class="qty-btn plus" type="button">+</button>
+    </div>
+  </div>
 
-          <div class="flavor-row" data-flavor="Cacao y banana">
-            <div class="flavor-name"><strong>Cacao y banana</strong></div>
-            <div class="qty-controls">
-              <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
-              <button class="qty-btn plus" type="button">+</button>
-            </div>
-          </div>
-        </div>
+  <div class="flavor-row" data-flavor="Cacao y banana">
+    <div class="flavor-name"><strong>Cacao y banana</strong></div>
+    <div class="qty-controls">
+      <button class="qty-btn minus" type="button">−</button>
+      <input class="qty-input" type="number" min="0" value="0" inputmode="numeric">
+      <button class="qty-btn plus" type="button">+</button>
+    </div>
+  </div>
+</div>
 
         <div class="pack-footer">
           <div class="validation"></div>
@@ -1158,48 +1173,48 @@
           <span class="tag">20g proteína c/u</span>
         </div>
 
-        <div class="selector-box">
-          <div class="selector-head">
-            <strong>Elegí tus sabores</strong>
-            <span class="counter-summary">0 / 30 unidades</span>
-          </div>
+<div class="selector-box">
+  <div class="selector-head">
+    <strong>Elegí tus sabores</strong>
+    <span class="counter-summary">0 / 30 unidades</span>
+  </div>
 
-          <div class="flavor-row" data-flavor="Clásico">
-            <div class="flavor-name"><strong>Clásico</strong></div>
-            <div class="qty-controls">
-              <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
-              <button class="qty-btn plus" type="button">+</button>
-            </div>
-          </div>
+  <div class="flavor-row" data-flavor="Clásico">
+    <div class="flavor-name"><strong>Clásico</strong></div>
+    <div class="qty-controls">
+      <button class="qty-btn minus" type="button">−</button>
+      <input class="qty-input" type="number" min="0" value="0" inputmode="numeric">
+      <button class="qty-btn plus" type="button">+</button>
+    </div>
+  </div>
 
-          <div class="flavor-row" data-flavor="Vainilla">
-            <div class="flavor-name"><strong>Vainilla</strong></div>
-            <div class="qty-controls">
-              <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
-              <button class="qty-btn plus" type="button">+</button>
-            </div>
-          </div>
+  <div class="flavor-row" data-flavor="Vainilla">
+    <div class="flavor-name"><strong>Vainilla</strong></div>
+    <div class="qty-controls">
+      <button class="qty-btn minus" type="button">−</button>
+      <input class="qty-input" type="number" min="0" value="0" inputmode="numeric">
+      <button class="qty-btn plus" type="button">+</button>
+    </div>
+  </div>
 
-          <div class="flavor-row" data-flavor="Banana">
-            <div class="flavor-name"><strong>Banana</strong></div>
-            <div class="qty-controls">
-              <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
-              <button class="qty-btn plus" type="button">+</button>
-            </div>
-          </div>
+  <div class="flavor-row" data-flavor="Banana">
+    <div class="flavor-name"><strong>Banana</strong></div>
+    <div class="qty-controls">
+      <button class="qty-btn minus" type="button">−</button>
+      <input class="qty-input" type="number" min="0" value="0" inputmode="numeric">
+      <button class="qty-btn plus" type="button">+</button>
+    </div>
+  </div>
 
-          <div class="flavor-row" data-flavor="Cacao y banana">
-            <div class="flavor-name"><strong>Cacao y banana</strong></div>
-            <div class="qty-controls">
-              <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
-              <button class="qty-btn plus" type="button">+</button>
-            </div>
-          </div>
-        </div>
+  <div class="flavor-row" data-flavor="Cacao y banana">
+    <div class="flavor-name"><strong>Cacao y banana</strong></div>
+    <div class="qty-controls">
+      <button class="qty-btn minus" type="button">−</button>
+      <input class="qty-input" type="number" min="0" value="0" inputmode="numeric">
+      <button class="qty-btn plus" type="button">+</button>
+    </div>
+  </div>
+</div>
 
         <div class="pack-footer">
           <div class="validation"></div>
@@ -1434,7 +1449,7 @@
       </p>
     </div>
 
-    <div class="faq-grid">
+<div class="faq-grid">
 
   <div class="faq">
     <strong>¿Hacen envíos?</strong>
@@ -1448,27 +1463,27 @@
     </p>
   </div>
 
+  <div class="faq">
+    <strong>¿Puedo combinar sabores dentro del pack?</strong>
+    <p>Sí. Podés repartir las unidades como quieras, siempre que la suma dé exactamente el total del pack elegido.</p>
+  </div>
+
+  <div class="faq">
+    <strong>¿Cómo se conservan?</strong>
+    <p>Se conservan en freezer y se recomienda consumir dentro de los 2 meses.</p>
+  </div>
+
+  <div class="faq">
+    <strong>¿Cómo hago el pedido?</strong>
+    <p>Elegís tu pack, armás tus sabores y tocás el botón de WhatsApp. Se abre el mensaje con el resumen ya listo para enviar.</p>
+  </div>
+
+  <div class="faq">
+    <strong>¿Dónde se retira?</strong>
+    <p>Retiro en Palermo. Más detalles y coordinación por WhatsApp al momento del pedido.</p>
+  </div>
+
 </div>
-      <div class="faq">
-        <strong>¿Puedo combinar sabores dentro del pack?</strong>
-        <p>Sí. Podés repartir las unidades como quieras, siempre que la suma dé exactamente el total del pack elegido.</p>
-      </div>
-
-      <div class="faq">
-        <strong>¿Cómo se conservan?</strong>
-        <p>Se conservan en freezer y se recomienda consumir dentro de los 2 meses.</p>
-      </div>
-
-      <div class="faq">
-        <strong>¿Cómo hago el pedido?</strong>
-        <p>Elegís tu pack, armás tus sabores y tocás el botón de WhatsApp. Se abre el mensaje con el resumen ya listo para enviar.</p>
-      </div>
-
-      <div class="faq">
-        <strong>¿Dónde se retira?</strong>
-        <p>Retiro en Palermo. Más detalles y coordinación por WhatsApp al momento de hacer el pedido.</p>
-      </div>
-    </div>
   </div>
 </section>
 <section class="section">
@@ -1547,8 +1562,10 @@
     </div>
 
   </div>
-</section>
-    
+  
+<section class="section">
+  <div class="container">
+
     <div class="section-head">
       <div>
         <h2>@waff.ele</h2>
@@ -1603,76 +1620,110 @@
       return new Intl.NumberFormat("es-AR").format(price);
     }
 
-    function updatePackState(packCard) {
-      const packSize = Number(packCard.dataset.packSize);
-      const rows = packCard.querySelectorAll(".flavor-row");
-      const summary = packCard.querySelector(".counter-summary");
-      const validation = packCard.querySelector(".validation");
+function updatePackState(packCard) {
+  const packSize = Number(packCard.dataset.packSize);
+  const inputs = packCard.querySelectorAll(".qty-input");
+  const summary = packCard.querySelector(".counter-summary");
+  const validation = packCard.querySelector(".validation");
 
-      let total = 0;
-      rows.forEach(row => {
-        total += Number(row.querySelector(".qty-value").textContent);
-      });
+  let total = 0;
+  inputs.forEach(input => {
+    total += Number(input.value) || 0;
+  });
 
-      summary.textContent = `${total} / ${packSize} unidades`;
+  summary.textContent = `${total} / ${packSize} unidades`;
 
-      if (total === 0) {
-        validation.textContent = "Elegí cuántas unidades querés de cada sabor.";
-        validation.className = "validation";
-      } else if (total < packSize) {
-        validation.textContent = `Te faltan ${packSize - total} unidades para completar el pack.`;
-        validation.className = "validation error";
-      } else if (total > packSize) {
-        validation.textContent = `Te pasaste por ${total - packSize} unidades. Ajustá las cantidades.`;
-        validation.className = "validation error";
-      } else {
-        validation.textContent = "Perfecto. Tu pack ya está listo para pedir.";
-        validation.className = "validation ok";
+  if (total === 0) {
+    validation.textContent = "Elegí cuántas unidades querés de cada sabor.";
+    validation.className = "validation";
+  } else if (total < packSize) {
+    validation.textContent = `Te faltan ${packSize - total} unidades para completar el pack.`;
+    validation.className = "validation error";
+  } else if (total > packSize) {
+    validation.textContent = `Te pasaste por ${total - packSize} unidades. Ajustá las cantidades.`;
+    validation.className = "validation error";
+  } else {
+    validation.textContent = "Perfecto. Tu pack ya está listo para pedir.";
+    validation.className = "validation ok";
+  }
+}
+
+function getPackTotal(packCard) {
+  const inputs = packCard.querySelectorAll(".qty-input");
+  let total = 0;
+  inputs.forEach(input => {
+    total += Number(input.value) || 0;
+  });
+  return total;
+}
+
+function buildWhatsappMessage(packCard) {
+  const packSize = Number(packCard.dataset.packSize);
+  const packName = packCard.dataset.packName;
+  const packPrice = Number(packCard.dataset.packPrice);
+  const rows = packCard.querySelectorAll(".flavor-row");
+
+  const selectedFlavors = [];
+  rows.forEach(row => {
+    const flavor = row.dataset.flavor;
+    const qty = Number(row.querySelector(".qty-input").value) || 0;
+    if (qty > 0) {
+      selectedFlavors.push(`- ${flavor}: ${qty}`);
+    }
+  });
+
+  return `Hola Ele! Quiero pedir en WaffEle:%0A%0A${packName}%0A- Total de unidades: ${packSize}%0A${selectedFlavors.join("%0A")}%0A%0ATotal: $${formatPrice(packPrice)}%0A%0AForma de entrega:%0A`;
+}
+
+document.querySelectorAll(".pack-card").forEach(packCard => {
+  const inputs = packCard.querySelectorAll(".qty-input");
+
+  packCard.querySelectorAll(".plus").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const input = btn.parentElement.querySelector(".qty-input");
+      input.value = Number(input.value || 0) + 1;
+      updatePackState(packCard);
+    });
+  });
+
+  packCard.querySelectorAll(".minus").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const input = btn.parentElement.querySelector(".qty-input");
+      const val = Number(input.value || 0);
+      if (val > 0) {
+        input.value = val - 1;
       }
+      updatePackState(packCard);
+    });
+  });
+
+  inputs.forEach(input => {
+    input.addEventListener("input", () => {
+      if (input.value === "" || Number(input.value) < 0) {
+        input.value = 0;
+      }
+      updatePackState(packCard);
+    });
+  });
+
+  const whatsappBtn = packCard.querySelector(".whatsapp-btn");
+  whatsappBtn.addEventListener("click", () => {
+    const total = getPackTotal(packCard);
+    const packSize = Number(packCard.dataset.packSize);
+
+    if (total !== packSize) {
+      updatePackState(packCard);
+      alert(`Para pedir este pack, la suma de sabores tiene que dar exactamente ${packSize} unidades.`);
+      return;
     }
 
-    function getPackTotal(packCard) {
-      const rows = packCard.querySelectorAll(".flavor-row");
-      let total = 0;
-      rows.forEach(row => {
-        total += Number(row.querySelector(".qty-value").textContent);
-      });
-      return total;
-    }
+    const message = buildWhatsappMessage(packCard);
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+    window.open(url, "_blank");
+  });
 
-    function buildWhatsappMessage(packCard) {
-      const packSize = Number(packCard.dataset.packSize);
-      const packName = packCard.dataset.packName;
-      const packPrice = Number(packCard.dataset.packPrice);
-      const rows = packCard.querySelectorAll(".flavor-row");
-
-      const selectedFlavors = [];
-      rows.forEach(row => {
-        const flavor = row.dataset.flavor;
-        const qty = Number(row.querySelector(".qty-value").textContent);
-        if (qty > 0) {
-          selectedFlavors.push(`- ${flavor}: ${qty}`);
-        }
-      });
-
-      return `Hola! Quiero pedir en WaffEle:%0A%0A${packName}%0A- Total de unidades: ${packSize}%0A${selectedFlavors.join("%0A")}%0A%0ATotal: $${formatPrice(packPrice)}%0A%0AForma de entrega:%0A`;
-    }
-
-    document.querySelectorAll(".pack-card").forEach(packCard => {
-      const packSize = Number(packCard.dataset.packSize);
-
-      packCard.querySelectorAll(".plus").forEach(btn => {
-        btn.addEventListener("click", () => {
-          const qtyEl = btn.parentElement.querySelector(".qty-value");
-          const current = Number(qtyEl.textContent);
-          const total = getPackTotal(packCard);
-
-          if (total < packSize) {
-            qtyEl.textContent = current + 1;
-            updatePackState(packCard);
-          }
-        });
-      });
+  updatePackState(packCard);
+});
 
       packCard.querySelectorAll(".minus").forEach(btn => {
         btn.addEventListener("click", () => {
