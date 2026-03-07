@@ -4,106 +4,1486 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WaffEle</title>
+  <meta name="description" content="Waffles proteicos para resolver desayunos y meriendas de forma práctica, rica y nutritiva." />
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #FFF3EA;
-      color: #111827;
-      text-align: center;
+    :root {
+      --primary: #333C8E;
+      --bg: #FFF3EA;
+      --card: #EAD3BF;
+      --warm: #8A5A44;
+      --accent: #E42B67;
+      --deep: #111827;
+      --muted: #8791A0;
+      --mint: #CFF5E2;
+      --pink-soft: #FFD6E4;
+      --border: rgba(17, 24, 39, 0.08);
+      --shadow: 0 12px 30px rgba(17, 24, 39, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1180px;
     }
 
-    header {
-      padding: 40px 20px 20px;
-    }
-
-    h1 {
-      color: #333C8E;
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 18px;
-      max-width: 700px;
-      margin: 0 auto 20px;
-      line-height: 1.5;
-    }
-
-    .boton {
-      display: inline-block;
-      background-color: #333C8E;
-      color: white;
-      text-decoration: none;
-      padding: 14px 24px;
-      border-radius: 12px;
-      font-size: 16px;
-      font-weight: bold;
-      margin-top: 15px;
-    }
-
-    .seccion {
-      padding: 40px 20px;
-    }
-
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background: #EAD3BF;
-      border-radius: 18px;
-      padding: 24px;
-      width: 260px;
+    * {
       box-sizing: border-box;
     }
 
-    .card h2 {
-      color: #333C8E;
-      margin-top: 0;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .precio {
-      color: #E42B67;
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--deep);
+      font-family: "Inter", sans-serif;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 243, 234, 0.88);
+      border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-title {
+      font-family: "Poppins", sans-serif;
+      font-size: 30px;
+      line-height: 1;
+      color: var(--primary);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-sub {
+      font-size: 13px;
+      color: var(--warm);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--deep);
+      font-size: 15px;
+      font-weight: 600;
+      opacity: 0.85;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+      font-family: inherit;
+      font-size: 15px;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 10px 24px rgba(51, 60, 142, 0.28);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--primary);
+      border: 1px solid rgba(51, 60, 142, 0.12);
+    }
+
+    .hero {
+      padding: 42px 0 28px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-copy {
+      background: linear-gradient(135deg, rgba(255,243,234,1) 0%, rgba(234,211,191,0.62) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 44px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(207, 245, 226, 0.8);
+      color: #14532d;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Poppins", sans-serif;
+      letter-spacing: -0.03em;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 66px);
+      line-height: 0.98;
+      color: var(--primary);
+      margin-bottom: 18px;
+      max-width: 11ch;
+    }
+
+    .hero-copy p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: rgba(17,24,39,0.88);
+      max-width: 58ch;
+      margin: 0 0 26px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--deep);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .hero-side {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 18px;
+    }
+
+    .hero-card {
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .hero-card-main {
+      background: var(--primary);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 320px;
+    }
+
+    .hero-card-main .small {
+      font-size: 14px;
+      opacity: 0.9;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero-card-main h3 {
+      font-size: 31px;
+      line-height: 1.06;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .hero-card-main p {
+      color: rgba(255,255,255,0.9);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .macro-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .macro {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 14px;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .macro strong {
+      display: block;
       font-size: 24px;
-      font-weight: bold;
-      margin: 12px 0;
+      font-family: "Poppins", sans-serif;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .macro span {
+      font-size: 13px;
+      opacity: 0.9;
+      font-weight: 600;
+    }
+
+    .hero-card-soft {
+      background: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .mini-block {
+      background: var(--pink-soft);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .mini-block:nth-child(2) {
+      background: var(--mint);
+    }
+
+    .mini-block .label {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      opacity: 0.75;
+    }
+
+    .mini-block .value {
+      font-family: "Poppins", sans-serif;
+      font-size: 24px;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+
+    .section {
+      padding: 26px 0 72px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(28px, 3vw, 42px);
+      color: var(--primary);
+    }
+
+    .section-head p {
+      max-width: 56ch;
+      margin: 0;
+      color: rgba(17,24,39,0.72);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .pack-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .pack-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pack-card.featured {
+      border-color: rgba(228, 43, 103, 0.22);
+      box-shadow: 0 14px 32px rgba(228, 43, 103, 0.12);
+    }
+
+    .badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--accent);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+    }
+
+    .pack-top {
+      padding-right: 84px;
+    }
+
+    .pack-top h3 {
+      color: var(--primary);
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .pack-sub {
+      color: var(--warm);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .pack-desc {
+      color: rgba(17,24,39,0.78);
+      line-height: 1.6;
+      margin: 0;
+      min-height: 78px;
+    }
+
+    .price {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .price strong {
+      font-family: "Poppins", sans-serif;
+      color: var(--accent);
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .price span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .meta-info {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .meta-info .tag {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .selector-box {
+      background: #fcfaf8;
+      border: 1px solid rgba(17, 24, 39, 0.06);
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .selector-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .selector-head strong {
+      color: var(--deep);
+      font-size: 15px;
+    }
+
+    .counter-summary {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .flavor-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(17,24,39,0.06);
+    }
+
+    .flavor-row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .flavor-row:first-child {
+      padding-top: 0;
+    }
+
+    .flavor-name {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .flavor-name strong {
+      font-size: 15px;
+      color: var(--deep);
+    }
+
+    .flavor-name span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .qty-controls {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px;
+    }
+
+    .qty-btn {
+      width: 34px;
+      height: 34px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--bg);
+      color: var(--primary);
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .qty-value {
+      min-width: 18px;
+      text-align: center;
+      font-weight: 800;
+      color: var(--deep);
+    }
+
+    .pack-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .validation {
+      min-height: 22px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .validation.ok {
+      color: #166534;
+    }
+
+    .validation.error {
+      color: #b91c1c;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .benefit {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(51, 60, 142, 0.08);
+      color: var(--primary);
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .benefit h3 {
+      font-size: 20px;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .benefit p {
+      margin: 0;
+      color: rgba(17,24,39,0.75);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 18px;
+    }
+
+    .how-card,
+    .nutrition-card {
+      background: white;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .step-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: var(--primary);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-family: "Poppins", sans-serif;
+      font-weight: 800;
+    }
+
+    .step h4 {
+      margin: 0 0 6px;
+      color: var(--deep);
+      font-size: 17px;
+    }
+
+    .step p {
+      margin: 0;
+      color: rgba(17,24,39,0.74);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .nutrition-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .nutrition-chip {
+      background: var(--mint);
+      color: #14532d;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .nutri-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .nutri-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .nutri-item strong {
+      display: block;
+      color: var(--primary);
+      font-family: "Poppins", sans-serif;
+      font-size: 26px;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .nutri-item span {
+      color: rgba(17,24,39,0.72);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .ingredients {
+      background: #fcfaf8;
+      border: 1px solid rgba(17,24,39,0.06);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .ingredients strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--deep);
+    }
+
+    .ingredients p {
+      margin: 0;
+      line-height: 1.65;
+      color: rgba(17,24,39,0.76);
+      font-size: 15px;
+    }
+
+    .faq-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .faq strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--primary);
+      font-size: 17px;
+    }
+
+    .faq p {
+      margin: 0;
+      color: rgba(17,24,39,0.76);
+      line-height: 1.65;
+    }
+
+    .cta-band {
+      padding: 24px 0 84px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #333C8E 0%, #1f275f 100%);
+      color: white;
+      border-radius: 34px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      box-shadow: 0 18px 38px rgba(51, 60, 142, 0.25);
+    }
+
+    .cta-box h2 {
+      color: white;
+      font-size: clamp(28px, 3.2vw, 42px);
+      margin-bottom: 8px;
+    }
+
+    .cta-box p {
+      margin: 0;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.6;
+      max-width: 58ch;
+    }
+
+    .site-footer {
+      padding: 0 0 40px;
+    }
+
+    .footer-box {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: rgba(17,24,39,0.68);
+      font-size: 14px;
+    }
+
+    .footer-box strong {
+      color: var(--deep);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .how-grid,
+      .pack-grid,
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card-soft {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        min-height: auto;
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero {
+        padding-top: 24px;
+      }
+
+      .hero-copy,
+      .hero-card,
+      .how-card,
+      .nutrition-card,
+      .pack-card {
+        padding: 22px;
+      }
+
+      h1 {
+        max-width: none;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .hero-card-soft {
+        grid-template-columns: 1fr;
+      }
+
+      .macro-row,
+      .nutri-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flavor-row {
+        grid-template-columns: 1fr;
+      }
+
+      .qty-controls {
+        justify-self: start;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>WaffEle</h1>
-    <p>Waffles proteicos para resolver desayunos y meriendas de forma práctica, rica y nutritiva.</p>
-    <a class="boton" href="https://wa.me/5492324476880?text=Hola!%20Quiero%20pedir%20WaffEle">Pedir por WhatsApp</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="#" class="brand-title">WaffEle</a>
+        <span class="brand-sub">desayunos y meriendas con proteína</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#packs">Packs</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#nutricion">Nutrición</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#packs" class="btn btn-primary">Pedir ahora</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="seccion">
-    <h2 style="color:#333C8E;">Nuestros packs</h2>
-    <div class="cards">
-      <div class="card">
-        <h2>Pack x6</h2>
-        <p>Ideal para empezar con WaffEle.</p>
-        <div class="precio">$25.000</div>
-      </div>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">20 g de proteína por waffle</div>
+          <h1>Waffles proteicos, prácticos y de verdad ricos</h1>
+          <p>
+            La forma más simple de resolver desayunos y meriendas sin caer en lo de siempre.
+            Elegí tu pack, armá tus sabores y hacé tu pedido por WhatsApp.
+          </p>
 
-      <div class="card">
-        <h2>Pack x14</h2>
-        <p>Perfecto para tener resueltos tus desayunos y meriendas por más tiempo.</p>
-        <div class="precio">$50.000</div>
-      </div>
+          <div class="hero-cta">
+            <a href="#packs" class="btn btn-primary">Armar pedido</a>
+            <a href="#nutricion" class="btn btn-secondary">Ver info nutricional</a>
+          </div>
 
-      <div class="card">
-        <h2>Pack x30</h2>
-        <p>El pack ideal para stockearte y tener siempre una opción práctica y rica.</p>
-        <div class="precio">$100.000</div>
+          <div class="hero-points">
+            <span class="pill">Listos en minutos</span>
+            <span class="pill">Ideal pre o post entrenamiento</span>
+            <span class="pill">Prácticos para freezer</span>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="hero-card hero-card-main">
+            <div>
+              <div class="small">Línea Proteica</div>
+              <h3>Tu semana resuelta con sabor, practicidad y proteína</h3>
+              <p>
+                Elegí entre pack x6, x14 o x30 y combiná tus sabores favoritos como quieras.
+              </p>
+            </div>
+
+            <div class="macro-row">
+              <div class="macro">
+                <strong>20g</strong>
+                <span>proteína</span>
+              </div>
+              <div class="macro">
+                <strong>220</strong>
+                <span>kcal</span>
+              </div>
+              <div class="macro">
+                <strong>2 min</strong>
+                <span>listos</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card hero-card-soft">
+            <div class="mini-block">
+              <div class="label">Perfectos para</div>
+              <div class="value">desayunos</div>
+            </div>
+            <div class="mini-block">
+              <div class="label">También ideales para</div>
+              <div class="value">meriendas</div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <section id="packs" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Armá tu box WaffEle</h2>
+          </div>
+          <p>
+            Elegí el pack que mejor se adapte a tu rutina, combiná sabores y finalizá el pedido
+            por WhatsApp con el resumen ya armado.
+          </p>
+        </div>
+
+        <div class="pack-grid">
+
+          <!-- PACK X6 -->
+          <article class="pack-card" data-pack-size="6" data-pack-name="Pack x6" data-pack-price="25000">
+            <div class="pack-top">
+              <h3>Pack x6</h3>
+              <div class="pack-sub">Ideal para empezar con WaffEle</div>
+              <p class="pack-desc">
+                Probá distintos sabores y resolvé desayunos o meriendas de forma práctica, rica y nutritiva.
+              </p>
+            </div>
+
+            <div class="price">
+              <strong>$25.000</strong>
+              <span>120 g de proteína total en el pack</span>
+            </div>
+
+            <div class="meta-info">
+              <span class="tag">Combiná sabores</span>
+              <span class="tag">Listos en minutos</span>
+            </div>
+
+            <div class="selector-box">
+              <div class="selector-head">
+                <strong>Elegí tus sabores</strong>
+                <span class="counter-summary">0 / 6 unidades</span>
+              </div>
+
+<div class="flavor-row" data-flavor="Clásico">
+  <div class="flavor-name">
+    <strong>Clásico</strong>
+    <span>Simple, versátil y rendidor</span>
+  </div>
+  <div class="qty-controls">
+    <button class="qty-btn minus" type="button">−</button>
+    <span class="qty-value">0</span>
+    <button class="qty-btn plus" type="button">+</button>
+  </div>
+</div>
+
+<div class="flavor-row" data-flavor="Vainilla">
+  <div class="flavor-name">
+    <strong>Vainilla</strong>
+    <span>Suave, dulce y fácil de combinar</span>
+  </div>
+  <div class="qty-controls">
+    <button class="qty-btn minus" type="button">−</button>
+    <span class="qty-value">0</span>
+    <button class="qty-btn plus" type="button">+</button>
+  </div>
+</div>
+
+<div class="flavor-row" data-flavor="Banana">
+  <div class="flavor-name">
+    <strong>Banana</strong>
+    <span>Suave, dulce y fácil de combinar</span>
+  </div>
+  <div class="qty-controls">
+    <button class="qty-btn minus" type="button">−</button>
+    <span class="qty-value">0</span>
+    <button class="qty-btn plus" type="button">+</button>
+  </div>
+</div>
+
+<div class="flavor-row" data-flavor="Cacao &amp; banana">
+  <div class="flavor-name">
+    <strong>Cacao &amp; banana</strong>
+    <span>Más goloso, ideal para merienda</span>
+  </div>
+  <div class="qty-controls">
+    <button class="qty-btn minus" type="button">−</button>
+    <span class="qty-value">0</span>
+    <button class="qty-btn plus" type="button">+</button>
+  </div>
+</div>
+            </div>
+
+            <div class="pack-footer">
+              <div class="validation"></div>
+              <button class="btn btn-primary whatsapp-btn" type="button">Pedir Pack x6 por WhatsApp</button>
+            </div>
+          </article>
+
+          <!-- PACK X14 -->
+          <article class="pack-card featured" data-pack-size="14" data-pack-name="Pack x14" data-pack-price="50000">
+            <div class="badge">Más elegido</div>
+
+            <div class="pack-top">
+              <h3>Pack x14</h3>
+              <div class="pack-sub">Para tener la semana mucho más resuelta</div>
+              <p class="pack-desc">
+                Ideal para quienes quieren practicidad real en su rutina y más variedad para desayunos y meriendas.
+              </p>
+            </div>
+
+            <div class="price">
+              <strong>$50.000</strong>
+              <span>280 g de proteína total en el pack</span>
+            </div>
+
+            <div class="meta-info">
+              <span class="tag">Rinde más</span>
+              <span class="tag">Ideal freezer</span>
+            </div>
+<div class="selector-box">
+  <div class="selector-head">
+    <strong>Elegí tus sabores</strong>
+    <span class="counter-summary">0 / 14 unidades</span>
+  </div>
+
+  <div class="flavor-row" data-flavor="Clásico">
+    <div class="flavor-name">
+      <strong>Clásico</strong>
+      <span>Simple, versátil y rendidor</span>
     </div>
-  </section>
+    <div class="qty-controls">
+      <button class="qty-btn minus" type="button">−</button>
+      <span class="qty-value">0</span>
+      <button class="qty-btn plus" type="button">+</button>
+    </div>
+  </div>
+
+  <div class="flavor-row" data-flavor="Vainilla">
+    <div class="flavor-name">
+      <strong>Vainilla</strong>
+      <span>Suave, dulce y fácil de combinar</span>
+    </div>
+    <div class="qty-controls">
+      <button class="qty-btn minus" type="button">−</button>
+      <span class="qty-value">0</span>
+      <button class="qty-btn plus" type="button">+</button>
+    </div>
+  </div>
+
+  <div class="flavor-row" data-flavor="Banana">
+    <div class="flavor-name">
+      <strong>Banana</strong>
+      <span>Proteico y un toque frutal</span>
+    </div>
+    <div class="qty-controls">
+      <button class="qty-btn minus" type="button">−</button>
+      <span class="qty-value">0</span>
+      <button class="qty-btn plus" type="button">+</button>
+    </div>
+  </div>
+
+  <div class="flavor-row" data-flavor="Cacao &amp; banana">
+    <div class="flavor-name">
+      <strong>Cacao &amp; banana</strong>
+      <span>Más goloso, ideal para merienda</span>
+    </div>
+    <div class="qty-controls">
+      <button class="qty-btn minus" type="button">−</button>
+      <span class="qty-value">0</span>
+      <button class="qty-btn plus" type="button">+</button>
+    </div>
+  </div>
+</div>
+
+            <div class="pack-footer">
+              <div class="validation"></div>
+              <button class="btn btn-primary whatsapp-btn" type="button">Pedir Pack x14 por WhatsApp</button>
+            </div>
+          </article>
+
+          <!-- PACK X30 -->
+          <article class="pack-card" data-pack-size="30" data-pack-name="Pack x30" data-pack-price="100000">
+            <div class="pack-top">
+              <h3>Pack x30</h3>
+              <div class="pack-sub">El pack para stockearte de verdad</div>
+              <p class="pack-desc">
+                Para quienes quieren tener siempre una opción rica, práctica y proteica lista para usar.
+              </p>
+            </div>
+
+            <div class="price">
+              <strong>$100.000</strong>
+              <span>600 g de proteína total en el pack</span>
+            </div>
+
+            <div class="meta-info">
+              <span class="tag">Mayor rendimiento</span>
+              <span class="tag">Siempre a mano</span>
+            </div>
+
+            <div class="selector-box">
+              <div class="selector-head">
+                <strong>Elegí tus sabores</strong>
+                <span class="counter-summary">0 / 30 unidades</span>
+              </div>
+
+<div class="flavor-row" data-flavor="Clásico">
+  <div class="flavor-name">
+    <strong>Clásico</strong>
+    <span>Simple, versátil y rendidor</span>
+  </div>
+  <div class="qty-controls">
+    <button class="qty-btn minus" type="button">−</button>
+    <span class="qty-value">0</span>
+    <button class="qty-btn plus" type="button">+</button>
+  </div>
+</div>
+
+<div class="flavor-row" data-flavor="Vainilla">
+  <div class="flavor-name">
+    <strong>Vainilla</strong>
+    <span>Suave, dulce y fácil de combinar</span>
+  </div>
+  <div class="qty-controls">
+    <button class="qty-btn minus" type="button">−</button>
+    <span class="qty-value">0</span>
+    <button class="qty-btn plus" type="button">+</button>
+  </div>
+</div>
+
+<div class="flavor-row" data-flavor="Banana">
+  <div class="flavor-name">
+    <strong>Banana</strong>
+    <span>Proteico y un toque frutal</span> 
+  </div>
+  <div class="qty-controls">
+    <button class="qty-btn minus" type="button">−</button>
+    <span class="qty-value">0</span>
+    <button class="qty-btn plus" type="button">+</button>
+  </div>
+</div>
+
+<div class="flavor-row" data-flavor="Cacao &amp; banana">
+  <div class="flavor-name">
+    <strong>Cacao &amp; banana</strong>
+    <span>Más goloso, ideal para merienda</span>
+  </div>
+  <div class="qty-controls">
+    <button class="qty-btn minus" type="button">−</button>
+    <span class="qty-value">0</span>
+    <button class="qty-btn plus" type="button">+</button>
+  </div>
+</div>
+            </div>
+
+            <div class="pack-footer">
+              <div class="validation"></div>
+              <button class="btn btn-primary whatsapp-btn" type="button">Pedir Pack x30 por WhatsApp</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Por qué elegir WaffEle</h2>
+          </div>
+          <p>
+            Una opción pensada para quienes buscan practicidad real, buena textura, sabor y proteína
+            en una sola comida.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit">
+            <div class="benefit-icon">💪</div>
+            <h3>20 g de proteína</h3>
+            <p>Cada waffle aporta proteína de calidad para acompañar tu rutina y sumar saciedad.</p>
+          </div>
+
+          <div class="benefit">
+            <div class="benefit-icon">⏱️</div>
+            <h3>Listos en minutos</h3>
+            <p>Prácticos para esos días en los que querés comer bien sin complicarte ni ensuciar de más.</p>
+          </div>
+
+          <div class="benefit">
+            <div class="benefit-icon">🧇</div>
+            <h3>Ricos de verdad</h3>
+            <p>Textura, sabor y variedad para salir de los desayunos o meriendas repetidos de siempre.</p>
+          </div>
+
+          <div class="benefit">
+            <div class="benefit-icon">🧊</div>
+            <h3>Ideal para freezer</h3>
+            <p>Comprás tu pack, lo guardás y tenés siempre una opción práctica lista para usar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="nutricion" class="section">
+      <div class="container">
+        <div class="how-grid">
+          <div class="how-card">
+            <div class="section-head" style="margin-bottom: 0;">
+              <div>
+                <h2 style="font-size: 34px;">Cómo prepararlos</h2>
+              </div>
+            </div>
+
+            <div class="steps">
+              <div class="step">
+                <div class="step-num">1</div>
+                <div>
+                  <h4>Sacalos del freezer</h4>
+                  <p>Tenelos siempre a mano para resolver rápido desayunos o meriendas.</p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-num">2</div>
+                <div>
+                  <h4>Calentalos</h4>
+                  <p>Podés usar tostadora, sartén, horno o air fryer según lo que te quede más cómodo.</p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-num">3</div>
+                <div>
+                  <h4>Combiná como quieras</h4>
+                  <p>Comelos solos o sumales frutas, untables, yogur o toppings según tu momento del día.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="nutrition-card">
+            <div class="nutrition-head">
+              <div>
+                <h2 style="font-size: 34px; color: var(--primary);">Info nutricional</h2>
+              </div>
+              <span class="nutrition-chip">Línea Proteica</span>
+            </div>
+
+            <div class="nutri-grid">
+              <div class="nutri-item">
+                <strong>220</strong>
+                <span>kcal por unidad</span>
+              </div>
+              <div class="nutri-item">
+                <strong>20,2g</strong>
+                <span>proteínas</span>
+              </div>
+              <div class="nutri-item">
+                <strong>13,1g</strong>
+                <span>carbohidratos</span>
+              </div>
+              <div class="nutri-item">
+                <strong>9,3g</strong>
+                <span>grasas</span>
+              </div>
+            </div>
+
+            <div class="ingredients">
+              <strong>Ingredientes</strong>
+              <p>
+                Personalizá este texto con tu receta real. Por ejemplo: harina de avena, proteína,
+                huevo, yogur, banana, cacao, esencia de vainilla y otros ingredientes según sabor.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Preguntas frecuentes</h2>
+          </div>
+          <p>
+            Las dudas más comunes para que pedir tus WaffEle sea simple desde el primer momento.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq">
+            <strong>¿Puedo combinar sabores dentro del pack?</strong>
+            <p>Sí. Podés repartir las unidades como quieras, siempre que la suma dé exactamente el total del pack elegido.</p>
+          </div>
+
+          <div class="faq">
+            <strong>¿Cómo se conservan?</strong>
+            <p>Podés mantenerlos en freezer y calentarlos cuando los quieras usar. Así siempre tenés una opción lista a mano.</p>
+          </div>
+
+          <div class="faq">
+            <strong>¿Cómo hago el pedido?</strong>
+            <p>Elegís tu pack, armás tus sabores y tocás el botón de WhatsApp. Se abre el mensaje con el resumen ya listo para enviar.</p>
+          </div>
+
+          <div class="faq">
+            <strong>¿Hacen envíos?</strong>
+            <p>Acá después podés completar con retiro, entregas, zonas y días disponibles según cómo manejes la logística.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Elegí tu pack y hacé tu pedido por WhatsApp</h2>
+            <p>
+              WaffEle está pensado para que comer rico y sumar proteína sea práctico de verdad.
+              Armá tu box y dejá resueltos tus desayunos o meriendas.
+            </p>
+          </div>
+
+          <a href="#packs" class="btn btn-secondary">Ir a los packs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-box">
+      <div><strong>WaffEle</strong> · waffles proteicos para tu rutina</div>
+      <div>Personalizá acá retiro, envíos y zona</div>
+    </div>
+  </footer>
+
+  <script>
+    // REEMPLAZÁ ESTE NÚMERO POR EL TUYO
+    const WHATSAPP_NUMBER = "5492324476880";
+
+    function formatPrice(price) {
+      return new Intl.NumberFormat("es-AR").format(price);
+    }
+
+    function updatePackState(packCard) {
+      const packSize = Number(packCard.dataset.packSize);
+      const rows = packCard.querySelectorAll(".flavor-row");
+      const summary = packCard.querySelector(".counter-summary");
+      const validation = packCard.querySelector(".validation");
+
+      let total = 0;
+      rows.forEach(row => {
+        total += Number(row.querySelector(".qty-value").textContent);
+      });
+
+      summary.textContent = `${total} / ${packSize} unidades`;
+
+      if (total === 0) {
+        validation.textContent = "Elegí cuántas unidades querés de cada sabor.";
+        validation.className = "validation";
+      } else if (total < packSize) {
+        validation.textContent = `Te faltan ${packSize - total} unidades para completar el pack.`;
+        validation.className = "validation error";
+      } else if (total > packSize) {
+        validation.textContent = `Te pasaste por ${total - packSize} unidades. Ajustá las cantidades.`;
+        validation.className = "validation error";
+      } else {
+        validation.textContent = "Perfecto. Tu pack ya está listo para pedir.";
+        validation.className = "validation ok";
+      }
+    }
+
+    function getPackTotal(packCard) {
+      const rows = packCard.querySelectorAll(".flavor-row");
+      let total = 0;
+      rows.forEach(row => {
+        total += Number(row.querySelector(".qty-value").textContent);
+      });
+      return total;
+    }
+
+    function buildWhatsappMessage(packCard) {
+      const packSize = Number(packCard.dataset.packSize);
+      const packName = packCard.dataset.packName;
+      const packPrice = Number(packCard.dataset.packPrice);
+      const rows = packCard.querySelectorAll(".flavor-row");
+
+      const selectedFlavors = [];
+      rows.forEach(row => {
+        const flavor = row.dataset.flavor;
+        const qty = Number(row.querySelector(".qty-value").textContent);
+        if (qty > 0) {
+          selectedFlavors.push(`- ${flavor}: ${qty}`);
+        }
+      });
+
+      return `Hola! Quiero pedir en WaffEle:%0A%0A${packName}%0A- Total de unidades: ${packSize}%0A${selectedFlavors.join("%0A")}%0A%0ATotal: $${formatPrice(packPrice)}%0A%0AMi nombre:%0AForma de entrega:%0A`;
+    }
+
+    document.querySelectorAll(".pack-card").forEach(packCard => {
+      const packSize = Number(packCard.dataset.packSize);
+
+      packCard.querySelectorAll(".plus").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const qtyEl = btn.parentElement.querySelector(".qty-value");
+          const current = Number(qtyEl.textContent);
+          const total = getPackTotal(packCard);
+
+          if (total < packSize) {
+            qtyEl.textContent = current + 1;
+            updatePackState(packCard);
+          }
+        });
+      });
+
+      packCard.querySelectorAll(".minus").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const qtyEl = btn.parentElement.querySelector(".qty-value");
+          const current = Number(qtyEl.textContent);
+
+          if (current > 0) {
+            qtyEl.textContent = current - 1;
+            updatePackState(packCard);
+          }
+        });
+      });
+
+      const whatsappBtn = packCard.querySelector(".whatsapp-btn");
+      whatsappBtn.addEventListener("click", () => {
+        const total = getPackTotal(packCard);
+
+        if (total !== packSize) {
+          updatePackState(packCard);
+          alert(`Para pedir este pack, la suma de sabores tiene que dar exactamente ${packSize} unidades.`);
+          return;
+        }
+
+        const message = buildWhatsappMessage(packCard);
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+        window.open(url, "_blank");
+      });
+
+      updatePackState(packCard);
+    });
+  </script>
 </body>
 </html>
