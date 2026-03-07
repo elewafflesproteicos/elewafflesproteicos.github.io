@@ -807,6 +807,25 @@
   border-radius: 22px;
   box-shadow: var(--shadow);
 }
+    .instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.insta-post {
+  background: #f8fafc;
+  border: 1px dashed rgba(17,24,39,0.2);
+  border-radius: 22px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #8791A0;
+  font-size: 14px;
+}
     @media (max-width: 1100px) {
       .hero-grid,
       .how-grid,
@@ -1458,7 +1477,32 @@
     </div>
   </div>
 </section>
+<section class="section">
+  <div class="container">
 
+    <div class="section-head">
+      <div>
+        <h2>@waff.ele</h2>
+      </div>
+      <p>
+        Más ideas de toppings y novedades en @waff.ele
+      </p>
+    </div>
+
+    <div class="instagram-grid">
+
+      <div class="insta-post">Próximamente</div>
+      <div class="insta-post">Próximamente</div>
+      <div class="insta-post">Próximamente</div>
+      <div class="insta-post">Próximamente</div>
+      <div class="insta-post">Próximamente</div>
+      <div class="insta-post">Próximamente</div>
+
+    </div>
+
+  </div>
+</section>
+    
 <section class="cta-band">
   <div class="container">
     <div class="cta-box">
