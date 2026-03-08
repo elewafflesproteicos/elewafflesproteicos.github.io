@@ -908,6 +908,15 @@
     box-shadow: var(--shadow);
   }
 
+  .gallery-video {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  background: #000;
+}
+
   .insta-post {
     background: #f8fafc;
     border: 1px dashed rgba(17,24,39,0.2);
@@ -941,6 +950,11 @@
   }
 
   @media (max-width: 760px) {
+
+.gallery-video {
+  height: 260px;
+}
+    
     .nav {
       min-height: auto;
       padding: 14px 0;
@@ -1092,7 +1106,10 @@
     </div>
 
     <div class="gallery">
-      <img src="waffle1.jpg" alt="WaffEle con frutas">
+     <video class="gallery-video" autoplay muted loop playsinline>
+    <source src="IMG_2069.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
       <img src="waffle2.jpg" alt="Preparación WaffEle">
       <img src="waffle3.jpg" alt="Waffles tostados">
     </div>
