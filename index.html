@@ -548,13 +548,26 @@
     background: #efe2d7;
   }
 
-  .qty-value {
-    min-width: 24px;
-    text-align: center;
-    font-weight: 800;
-    color: var(--deep);
-    font-size: 18px;
-  }
+.qty-value {
+  width: 44px;
+  min-width: 44px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  text-align: center;
+  font-weight: 800;
+  color: var(--deep);
+  font-size: 18px;
+  font-family: inherit;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.qty-value::-webkit-outer-spin-button,
+.qty-value::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
   .pack-footer {
     display: flex;
@@ -1059,7 +1072,7 @@
             <div class="flavor-name"><strong>Clásico</strong></div>
             <div class="qty-controls">
               <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
               <button class="qty-btn plus" type="button">+</button>
             </div>
           </div>
@@ -1068,7 +1081,7 @@
             <div class="flavor-name"><strong>Vainilla</strong></div>
             <div class="qty-controls">
               <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
               <button class="qty-btn plus" type="button">+</button>
             </div>
           </div>
@@ -1077,7 +1090,7 @@
             <div class="flavor-name"><strong>Banana</strong></div>
             <div class="qty-controls">
               <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
               <button class="qty-btn plus" type="button">+</button>
             </div>
           </div>
@@ -1086,7 +1099,7 @@
             <div class="flavor-name"><strong>Cacao y banana</strong></div>
             <div class="qty-controls">
               <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
               <button class="qty-btn plus" type="button">+</button>
             </div>
           </div>
@@ -1126,7 +1139,7 @@
             <div class="flavor-name"><strong>Clásico</strong></div>
             <div class="qty-controls">
               <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
               <button class="qty-btn plus" type="button">+</button>
             </div>
           </div>
@@ -1135,7 +1148,7 @@
             <div class="flavor-name"><strong>Vainilla</strong></div>
             <div class="qty-controls">
               <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
               <button class="qty-btn plus" type="button">+</button>
             </div>
           </div>
@@ -1144,7 +1157,7 @@
             <div class="flavor-name"><strong>Banana</strong></div>
             <div class="qty-controls">
               <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
               <button class="qty-btn plus" type="button">+</button>
             </div>
           </div>
@@ -1153,7 +1166,7 @@
             <div class="flavor-name"><strong>Cacao y banana</strong></div>
             <div class="qty-controls">
               <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
               <button class="qty-btn plus" type="button">+</button>
             </div>
           </div>
@@ -1191,7 +1204,7 @@
             <div class="flavor-name"><strong>Clásico</strong></div>
             <div class="qty-controls">
               <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
               <button class="qty-btn plus" type="button">+</button>
             </div>
           </div>
@@ -1200,7 +1213,7 @@
             <div class="flavor-name"><strong>Vainilla</strong></div>
             <div class="qty-controls">
               <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
               <button class="qty-btn plus" type="button">+</button>
             </div>
           </div>
@@ -1209,7 +1222,7 @@
             <div class="flavor-name"><strong>Banana</strong></div>
             <div class="qty-controls">
               <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
               <button class="qty-btn plus" type="button">+</button>
             </div>
           </div>
@@ -1218,7 +1231,7 @@
             <div class="flavor-name"><strong>Cacao y banana</strong></div>
             <div class="qty-controls">
               <button class="qty-btn minus" type="button">−</button>
-              <span class="qty-value">0</span>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
               <button class="qty-btn plus" type="button">+</button>
             </div>
           </div>
@@ -1609,115 +1622,151 @@
     </div>
   </footer>
 
-  <script>
-    // REEMPLAZÁ ESTE NÚMERO POR EL TUYO
-    const WHATSAPP_NUMBER = "5492324476880";
+<script>
+  const WHATSAPP_NUMBER = "5492324476880";
 
-    function formatPrice(price) {
-      return new Intl.NumberFormat("es-AR").format(price);
+  function formatPrice(price) {
+    return new Intl.NumberFormat("es-AR").format(price);
+  }
+
+  function getQty(row) {
+    const input = row.querySelector(".qty-value");
+    const value = parseInt(input.value, 10);
+    return isNaN(value) || value < 0 ? 0 : value;
+  }
+
+  function setQty(row, value) {
+    const input = row.querySelector(".qty-value");
+    input.value = Math.max(0, value);
+  }
+
+  function getPackTotal(packCard) {
+    const rows = packCard.querySelectorAll(".flavor-row");
+    let total = 0;
+
+    rows.forEach(row => {
+      total += getQty(row);
+    });
+
+    return total;
+  }
+
+  function updatePackState(packCard) {
+    const packSize = Number(packCard.dataset.packSize);
+    const rows = packCard.querySelectorAll(".flavor-row");
+    const summary = packCard.querySelector(".counter-summary");
+    const validation = packCard.querySelector(".validation");
+
+    let total = 0;
+    rows.forEach(row => {
+      total += getQty(row);
+    });
+
+    summary.textContent = `${total} / ${packSize} unidades`;
+
+    if (total === 0) {
+      validation.textContent = "Elegí cuántas unidades querés de cada sabor.";
+      validation.className = "validation";
+    } else if (total < packSize) {
+      validation.textContent = `Te faltan ${packSize - total} unidades para completar el pack.`;
+      validation.className = "validation error";
+    } else if (total > packSize) {
+      validation.textContent = `Te pasaste por ${total - packSize} unidades. Ajustá las cantidades.`;
+      validation.className = "validation error";
+    } else {
+      validation.textContent = "Perfecto. Tu pack ya está listo para pedir.";
+      validation.className = "validation ok";
     }
+  }
 
-    function updatePackState(packCard) {
-      const packSize = Number(packCard.dataset.packSize);
-      const rows = packCard.querySelectorAll(".flavor-row");
-      const summary = packCard.querySelector(".counter-summary");
-      const validation = packCard.querySelector(".validation");
+  function buildWhatsappMessage(packCard) {
+    const packSize = Number(packCard.dataset.packSize);
+    const packName = packCard.dataset.packName;
+    const packPrice = Number(packCard.dataset.packPrice);
+    const rows = packCard.querySelectorAll(".flavor-row");
 
-      let total = 0;
-      rows.forEach(row => {
-        total += Number(row.querySelector(".qty-value").textContent);
-      });
+    const selectedFlavors = [];
+    rows.forEach(row => {
+      const flavor = row.dataset.flavor;
+      const qty = getQty(row);
 
-      summary.textContent = `${total} / ${packSize} unidades`;
-
-      if (total === 0) {
-        validation.textContent = "Elegí cuántas unidades querés de cada sabor.";
-        validation.className = "validation";
-      } else if (total < packSize) {
-        validation.textContent = `Te faltan ${packSize - total} unidades para completar el pack.`;
-        validation.className = "validation error";
-      } else if (total > packSize) {
-        validation.textContent = `Te pasaste por ${total - packSize} unidades. Ajustá las cantidades.`;
-        validation.className = "validation error";
-      } else {
-        validation.textContent = "Perfecto. Tu pack ya está listo para pedir.";
-        validation.className = "validation ok";
+      if (qty > 0) {
+        selectedFlavors.push(`- ${flavor}: ${qty}`);
       }
-    }
+    });
 
-    function getPackTotal(packCard) {
-      const rows = packCard.querySelectorAll(".flavor-row");
-      let total = 0;
-      rows.forEach(row => {
-        total += Number(row.querySelector(".qty-value").textContent);
-      });
-      return total;
-    }
+    return `Hola Ele! Quiero pedir en WaffEle:%0A%0A${packName}%0A- Total de unidades: ${packSize}%0A${selectedFlavors.join("%0A")}%0A%0ATotal: $${formatPrice(packPrice)}%0A%0AForma de entrega:%0A`;
+  }
 
-    function buildWhatsappMessage(packCard) {
-      const packSize = Number(packCard.dataset.packSize);
-      const packName = packCard.dataset.packName;
-      const packPrice = Number(packCard.dataset.packPrice);
-      const rows = packCard.querySelectorAll(".flavor-row");
+  document.querySelectorAll(".pack-card").forEach(packCard => {
+    const packSize = Number(packCard.dataset.packSize);
 
-      const selectedFlavors = [];
-      rows.forEach(row => {
-        const flavor = row.dataset.flavor;
-        const qty = Number(row.querySelector(".qty-value").textContent);
-        if (qty > 0) {
-          selectedFlavors.push(`- ${flavor}: ${qty}`);
-        }
-      });
-
-      return `Hola Ele! Quiero pedir en WaffEle:%0A%0A${packName}%0A- Total de unidades: ${packSize}%0A${selectedFlavors.join("%0A")}%0A%0ATotal: $${formatPrice(packPrice)}%0A%0AForma de entrega:%0A`;
-    }
-
-    document.querySelectorAll(".pack-card").forEach(packCard => {
-      const packSize = Number(packCard.dataset.packSize);
-
-      packCard.querySelectorAll(".plus").forEach(btn => {
-        btn.addEventListener("click", () => {
-          const qtyEl = btn.parentElement.querySelector(".qty-value");
-          const current = Number(qtyEl.textContent);
-          const total = getPackTotal(packCard);
-
-          if (total < packSize) {
-            qtyEl.textContent = current + 1;
-            updatePackState(packCard);
-          }
-        });
-      });
-
-      packCard.querySelectorAll(".minus").forEach(btn => {
-        btn.addEventListener("click", () => {
-          const qtyEl = btn.parentElement.querySelector(".qty-value");
-          const current = Number(qtyEl.textContent);
-
-          if (current > 0) {
-            qtyEl.textContent = current - 1;
-            updatePackState(packCard);
-          }
-        });
-      });
-
-      const whatsappBtn = packCard.querySelector(".whatsapp-btn");
-      whatsappBtn.addEventListener("click", () => {
+    packCard.querySelectorAll(".plus").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const row = btn.closest(".flavor-row");
+        const current = getQty(row);
         const total = getPackTotal(packCard);
 
-        if (total !== packSize) {
+        if (total < packSize) {
+          setQty(row, current + 1);
           updatePackState(packCard);
-          alert(`Para pedir este pack, la suma de sabores tiene que dar exactamente ${packSize} unidades.`);
-          return;
+        }
+      });
+    });
+
+    packCard.querySelectorAll(".minus").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const row = btn.closest(".flavor-row");
+        const current = getQty(row);
+
+        if (current > 0) {
+          setQty(row, current - 1);
+          updatePackState(packCard);
+        }
+      });
+    });
+
+    packCard.querySelectorAll(".qty-value").forEach(input => {
+      input.addEventListener("input", () => {
+        let value = parseInt(input.value, 10);
+
+        if (isNaN(value) || value < 0) {
+          value = 0;
         }
 
-        const message = buildWhatsappMessage(packCard);
-        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-        window.open(url, "_blank");
+        input.value = value;
+        updatePackState(packCard);
       });
 
-      updatePackState(packCard);
+      input.addEventListener("blur", () => {
+        let value = parseInt(input.value, 10);
+
+        if (isNaN(value) || value < 0) {
+          input.value = 0;
+        }
+
+        updatePackState(packCard);
+      });
     });
-  </script>
+
+    const whatsappBtn = packCard.querySelector(".whatsapp-btn");
+    whatsappBtn.addEventListener("click", () => {
+      const total = getPackTotal(packCard);
+
+      if (total !== packSize) {
+        updatePackState(packCard);
+        alert(`Para pedir este pack, la suma de sabores tiene que dar exactamente ${packSize} unidades.`);
+        return;
+      }
+
+      const message = buildWhatsappMessage(packCard);
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+      window.open(url, "_blank");
+    });
+
+    updatePackState(packCard);
+  });
+</script>
 </body>
 </html> 
 
