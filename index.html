@@ -748,74 +748,6 @@
     color: rgba(17,24,39,0.76);
     font-size: 15px;
   }
-  
-.story-section {
-  padding: 26px 0 72px;
-}
-
-.story-box {
-  background: #f3d4e2;
-  border: 1px solid rgba(138, 90, 68, 0.10);
-  border-radius: 32px;
-  padding: 34px;
-  box-shadow: var(--shadow);
-}
-
-.story-head {
-  margin-bottom: 22px;
-}
-
-.story-title {
-  font-size: clamp(32px, 4.6vw, 64px);
-  line-height: 1.02;
-  color: var(--primary);
-  margin: 0 0 14px;
-  max-width: 15ch;
-}
-
-.story-subtitle {
-  margin: 0;
-  font-size: 22px;
-  line-height: 1.55;
-  color: rgba(17,24,39,0.78);
-  max-width: 42ch;
-  font-weight: 500;
-}
-
-.story-content {
-  background: rgba(255, 248, 252, 0.78);
-  border: 1px solid rgba(138, 90, 68, 0.08);
-  border-radius: 24px;
-  padding: 24px;
-}
-
-.story-content p {
-  margin: 0;
-  line-height: 1.75;
-  color: rgba(17,24,39,0.82);
-  font-size: 16px;
-}
-
-.story-content p + p {
-  margin-top: 14px;
-}
-
-@media (max-width: 760px) {
-  .story-box {
-    padding: 24px;
-  }
-
-  .story-title {
-    max-width: none;
-  }
-
-  .story-subtitle {
-    font-size: 18px;
-  }
-
-  .story-content {
-    padding: 20px;
-  }
 
   .faq-grid {
     display: grid;
@@ -1314,7 +1246,41 @@
     </div>
   </div>
 </section>
-  
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <h2>Pensado desde la nutrición 
+          y la practicidad</h2>
+      </div>
+      <p>
+        WaffEle nace para demostrar que comer nutritivo 
+        también puede ser rico, práctico y parte de tu rutina.
+      </p>
+    </div>
+
+    <div class="ingredients">
+      <p>
+       Creado por Elena, estudiante avanzada de la Licenciatura en Nutrición, 
+        WaffEle busca hacerte más fácil el desayuno o la merienda con una opción rica, simple y lista en minutos.
+
+      </p>
+
+      <p style="margin-top:12px;">
+        Hechos con proteína de suero de leche, están pensados para sumar 
+        proteína en el día sin perder tiempo, sin ensuciar de más y sin caer siempre en lo mismo.
+        Porque comer nutritivo no debería ser complicado.
+      </p>
+
+      <p style="margin-top:12px;">
+        Desde la nutrición a tu cocina, así de simple.
+      </p>
+    </div>
+
+  </div>
+</section>
 <section id="nutricion" class="section">
   <div class="container">
     <div class="how-grid">
@@ -1632,33 +1598,6 @@
     </div>
   </div>
 </section>
-
-<section class="story-section">
-  <div class="container">
-    <div class="story-box">
-      <div class="story-head">
-        <h2 class="story-title">Pensado desde la nutrición y la practicidad</h2>
-        <p class="story-subtitle">
-          WaffEle nace para demostrar que comer nutritivo también puede ser rico, práctico y parte de tu rutina.
-        </p>
-      </div>
-
-      <div class="story-content">
-        <p>
-          Creado por Elena, estudiante avanzada de la Licenciatura en Nutrición, WaffEle busca hacerte más fácil el desayuno o la merienda con una opción rica, simple y lista en minutos.
-        </p>
-
-        <p>
-          Hechos con proteína de suero de leche, están pensados para sumar proteína en el día sin perder tiempo, sin ensuciar de más y sin caer siempre en lo mismo. Porque comer nutritivo no debería ser complicado.
-        </p>
-
-        <p>
-          Desde la nutrición a tu cocina, así de simple.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
     
 <section class="cta-band">
   <div class="container">
@@ -1756,7 +1695,7 @@
       }
     });
 
-    return `Hola Ele! Quiero pedir en WaffEle:%0A%0A${packName}%0A${selectedFlavors.join("%0A")}%0A%0ATotal: $${formatPrice(packPrice)}%0A%0AForma de entrega:%0A`;
+    return `Hola Ele! Quiero pedir en WaffEle:%0A%0A${packName}%0A- Total de unidades: ${packSize}%0A${selectedFlavors.join("%0A")}%0A%0ATotal: $${formatPrice(packPrice)}%0A%0AForma de entrega:%0A`;
   }
 
   document.querySelectorAll(".pack-card").forEach(packCard => {
@@ -1829,5 +1768,4 @@
   });
 </script>
 </body>
-</html> 
-
+</html>
