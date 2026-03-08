@@ -207,7 +207,115 @@
     max-width: 58ch;
     margin: 0 0 26px;
   }
+.hero-kicker {
+  font-size: 22px;
+  line-height: 1.2;
+  color: rgba(17,24,39,0.82);
+  font-weight: 700;
+  margin: 0 0 24px;
+}
 
+.hero-media {
+  background: linear-gradient(135deg, rgba(255,243,234,0.96) 0%, rgba(234,211,191,0.72) 100%);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 18px;
+  margin-bottom: 24px;
+}
+
+.hero-media-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.hero-video-wrap {
+  min-height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 80% 88%;
+  display: block;
+  transform: scale(1.02);
+}
+
+.hero-photos {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+}
+
+.hero-photos img {
+  width: 100%;
+  height: 203px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.linea-section {
+  padding: 0 0 26px;
+}
+
+.linea-wrap {
+  max-width: 1180px;
+}
+
+.linea-card {
+  background: var(--primary);
+  color: white;
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.linea-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.linea-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(207, 245, 226, 0.9);
+  color: #14532d;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.linea-small {
+  font-size: 14px;
+  opacity: 0.9;
+  font-weight: 700;
+}
+
+.linea-card h3 {
+  font-size: 31px;
+  line-height: 1.06;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.linea-card p {
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 70ch;
+}
   .hero-cta {
     display: flex;
     gap: 12px;
@@ -800,6 +908,29 @@
 }
 
 @media (max-width: 760px) {
+ .hero-kicker {
+  font-size: 18px;
+}
+
+.hero-media {
+  padding: 14px;
+}
+
+.hero-media-grid {
+  grid-template-columns: 1fr;
+}
+
+.hero-video-wrap {
+  min-height: 260px;
+}
+
+.hero-photos {
+  grid-template-rows: 1fr 1fr;
+}
+
+.hero-photos img {
+  height: 220px;
+}
   .story-box {
     padding: 24px;
   }
@@ -968,6 +1099,23 @@
       grid-template-columns: 1fr;
     }
 
+.hero-media-grid {
+  grid-template-columns: 1fr;
+}
+
+.hero-video-wrap {
+  min-height: 320px;
+}
+
+.hero-photos {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: none;
+}
+
+.hero-photos img {
+  height: 220px;
+}
+    
     .hero-card-soft {
       grid-template-columns: 1fr 1fr;
     }
@@ -1066,93 +1214,69 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">20 g de proteína por waffle</div>
-          <h1>Waffles proteicos, prácticos y de verdad ricos</h1>
-          <p>
-            La forma más simple de resolver desayunos y meriendas sin caer en lo de siempre.
-            Elegí tu pack, armá tus sabores y hacé tu pedido por WhatsApp.
-          </p>
-
-          <div class="hero-cta">
-            <a href="#packs" class="btn btn-primary">Armar pedido</a>
-            <a href="#nutricion" class="btn btn-secondary">Ver info nutricional</a>
-          </div>
-
-          <div class="hero-points">
-            <span class="pill">Listos en minutos</span>
-            <span class="pill">Ideal pre o post entrenamiento</span>
-            <span class="pill">Prácticos para freezer</span>
-          </div>
-        </div>
-
-        <div class="hero-side">
-          <div class="hero-card hero-card-main">
-            <div>
-              <div class="small">Línea Proteica</div>
-              <h3>Tu semana resuelta con sabor, practicidad y proteína</h3>
-              <p>
-                Elegí entre pack x6, x14 o x30 y combiná tus sabores favoritos como quieras.
-              </p>
-            </div>
-
-            <div class="macro-row">
-              <div class="macro">
-                <strong>20g</strong>
-                <span>proteína</span>
-              </div>
-              <div class="macro">
-                <strong>220</strong>
-                <span>kcal</span>
-              </div>
-              <div class="macro">
-                <strong>2 min</strong>
-                <span>listos</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-card hero-card-soft">
-            <div class="mini-block">
-              <div class="label">Perfectos para</div>
-              <div class="value">desayunos</div>
-            </div>
-            <div class="mini-block">
-              <div class="label">También ideales para</div>
-              <div class="value">meriendas</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-<section class="section">
+<section class="hero">
   <div class="container">
+    <div class="hero-copy">
+      <h1>Waffles proteicos, prácticos y de verdad ricos</h1>
+      <p class="hero-kicker">WaffEle en tu rutina</p>
 
-    <div class="section-head">
-      <div>
-        <h2>WaffEle en tu rutina</h2>
+      <div class="hero-media">
+        <div class="hero-media-grid">
+          <div class="hero-video-wrap">
+            <video class="hero-video" autoplay muted loop playsinline>
+              <source src="IMG_2069.mp4" type="video/mp4">
+              Tu navegador no soporta video HTML5.
+            </video>
+          </div>
+
+          <div class="hero-photos">
+            <img src="waffle2.jpg" alt="Preparación WaffEle">
+            <img src="waffle3.jpg" alt="Waffles tostados">
+          </div>
+        </div>
       </div>
-      <p>
-        Desayunos o meriendas prácticos, con proteína y rico de verdad.
-      </p>
+
+      <div class="hero-cta">
+        <a href="#packs" class="btn btn-primary">Armar pedido</a>
+        <a href="#nutricion" class="btn btn-secondary">Ver info nutricional</a>
+      </div>
     </div>
-
-   <div class="gallery">
-  <div class="gallery-video-wrap">
-    <video class="gallery-video" autoplay muted loop playsinline>
-      <source src="IMG_2069.mp4" type="video/mp4">
-      Tu navegador no soporta video HTML5.
-    </video>
-  </div>
-
-  <img src="waffle2.jpg" alt="Preparación WaffEle">
-  <img src="waffle3.jpg" alt="Waffles tostados">
-</div>
-
   </div>
 </section>
+    
+<section class="linea-section">
+  <div class="container linea-wrap">
+    <div class="linea-card">
+      <div class="linea-top">
+        <span class="linea-badge">20 g de proteína por waffle</span>
+        <span class="linea-small">Línea Proteica</span>
+      </div>
+
+      <h3>Tu semana resuelta con sabor, practicidad y proteína</h3>
+
+      <p>
+        Pensada para acompañarte en el día a día con waffles ricos, prácticos y con 20 g de proteína por unidad.
+        Elegí tu pack, combiná sabores y finalizá tu pedido por WhatsApp.
+      </p>
+
+      <div class="macro-row">
+        <div class="macro">
+          <strong>20g</strong>
+          <span>proteína</span>
+        </div>
+        <div class="macro">
+          <strong>220</strong>
+          <span>kcal</span>
+        </div>
+        <div class="macro">
+          <strong>2 min</strong>
+          <span>listos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    
 <section id="packs" class="section">
   <div class="container">
     <div class="section-head">
