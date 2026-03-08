@@ -912,6 +912,23 @@ h1 {
 .story-content p + p {
   margin-top: 14px;
 }
+    .story-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.story-pill {
+  background: rgba(255, 243, 234, 0.82);
+  border: 1px solid rgba(138, 90, 68, 0.10);
+  color: var(--deep);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
 
 @media (max-width: 760px) {
  .hero-kicker {
@@ -952,6 +969,7 @@ h1 {
   .story-content {
     padding: 20px;
   }
+
 }
   .faq-grid {
     display: grid;
@@ -1104,9 +1122,7 @@ h1 {
     .benefits-grid {
       grid-template-columns: 1fr;
     }
-.hero-video-wrap {
-  min-height: 340px;
-}
+
 .hero-media-grid {
   grid-template-columns: 1fr;
 }
@@ -1324,10 +1340,9 @@ h1 {
       <div>
         <h2>Armá tu Pack WaffEle con 20g de proteína c/u</h2>
       </div>
-      <p>
-        Elegí el pack que mejor se adapte a tu rutina, combiná sabores y finalizá el pedido
-        por WhatsApp. Cada waffle de esta línea aporta 20g de proteína.
-      </p>
+    <p>
+  Elegí tu pack, combiná los sabores como quieras y armá tu pedido en pocos pasos.
+</p>
     </div>
 
     <div class="pack-grid">
@@ -1854,7 +1869,7 @@ h1 {
   </div>
 </section>
      
-    <section class="story-section">
+ <section class="story-section">
   <div class="container">
     <div class="story-box">
       <div class="story-head">
@@ -1876,6 +1891,12 @@ h1 {
         <p>
           Desde la nutrición a tu cocina, así de simple.
         </p>
+
+        <div class="story-pills">
+          <span class="story-pill">Listos en minutos</span>
+          <span class="story-pill">Ideal pre o post entrenamiento</span>
+          <span class="story-pill">Prácticos para freezer</span>
+        </div>
       </div>
     </div>
   </div>
