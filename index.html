@@ -908,15 +908,20 @@
     box-shadow: var(--shadow);
   }
 
+.gallery-video-wrap {
+  height: 340px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
 .gallery-video {
   width: 100%;
-  height: 340px;
+  height: 100%;
   object-fit: cover;
-  object-position: 75% 85%;
-  border-radius: 22px;
-  box-shadow: var(--shadow);
-  background: transparent;
+  object-position: 80% 88%;
   display: block;
+  transform: scale(1.02);
 }
 
   .insta-post {
@@ -953,6 +958,9 @@
 
   @media (max-width: 760px) {
 
+    .gallery-video-wrap {
+  height: 260px;
+}
 .gallery-video {
   height: 260px;
 }
@@ -1107,14 +1115,17 @@
       </p>
     </div>
 
-    <div class="gallery">
-     <video class="gallery-video" autoplay muted loop playsinline>
-    <source src="IMG_2069.mp4" type="video/mp4">
-    Tu navegador no soporta video HTML5.
-  </video>
-      <img src="waffle2.jpg" alt="Preparación WaffEle">
-      <img src="waffle3.jpg" alt="Waffles tostados">
-    </div>
+   <div class="gallery">
+  <div class="gallery-video-wrap">
+    <video class="gallery-video" autoplay muted loop playsinline>
+      <source src="IMG_2069.mp4" type="video/mp4">
+      Tu navegador no soporta video HTML5.
+    </video>
+  </div>
+
+  <img src="waffle2.jpg" alt="Preparación WaffEle">
+  <img src="waffle3.jpg" alt="Waffles tostados">
+</div>
 
   </div>
 </section>
