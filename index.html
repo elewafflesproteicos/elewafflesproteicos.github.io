@@ -405,6 +405,10 @@ h1 {
     gap: 12px;
     margin-top: 22px;
   }
+  .macro-row-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 360px;
+}
 
   .macro {
     background: rgba(255,255,255,0.1);
@@ -1311,32 +1315,28 @@ h1 {
 <section class="linea-section">
   <div class="container linea-wrap">
     <div class="linea-card">
-      <div class="linea-top">
-        <span class="linea-badge">20 g de proteína por waffle</span>
-        <span class="linea-small">Línea Proteica</span>
-      </div>
+   <div class="linea-top">
+  <span class="linea-small">Línea Proteica</span>
+  <span class="linea-badge">20 g de proteína por waffle</span>
+</div>
 
-      <h3>Tu semana resuelta con sabor, practicidad y proteína</h3>
+    <h3>Tu semana resuelta con practicidad + proteína</h3>
 
-      <p>
-        Pensada para acompañarte en el día a día con waffles ricos, prácticos y con 20 g de proteína por unidad.
-        Elegí tu pack, combiná sabores y finalizá tu pedido por WhatsApp.
-      </p>
+   <p>
+  Pensada para acompañarte en el día a día con waffles ricos, prácticos y fáciles de sumar a tu rutina.
+  Sin azúcar ni edulcorante agregado, libres de sellos y listos para disfrutar en minutos.
+</p>
 
-      <div class="macro-row">
-        <div class="macro">
-          <strong>20g</strong>
-          <span>proteína</span>
-        </div>
-        <div class="macro">
-          <strong>220</strong>
-          <span>kcal</span>
-        </div>
-        <div class="macro">
-          <strong>2 min</strong>
-          <span>listos</span>
-        </div>
-      </div>
+<div class="macro-row macro-row-two">
+  <div class="macro">
+    <strong>20g</strong>
+    <span>proteína</span>
+  </div>
+  <div class="macro">
+    <strong>2 min</strong>
+    <span>listos</span>
+  </div>
+</div>
     </div>
   </div>
 </section>
@@ -1357,7 +1357,7 @@ h1 {
       <!-- PACK X6 -->
       <article class="pack-card" data-pack-size="6" data-pack-name="Pack x6" data-pack-price="25000">
         <div class="pack-top">
-          <h3>Pack x6</h3>
+          <h3>Pack x 6 Waffles</h3>
           <div class="pack-sub">Ideal para empezar con WaffEle</div>
         </div>
 
@@ -1419,7 +1419,7 @@ h1 {
         <div class="badge">Más elegido</div>
 
         <div class="pack-top">
-          <h3>Pack x14</h3>
+          <h3>Pack x 14 Waffles</h3>
           <div class="pack-sub">Para tener la semana resuelta</div>
         </div>
 
@@ -1479,7 +1479,7 @@ h1 {
       <!-- PACK X30 -->
       <article class="pack-card" data-pack-size="30" data-pack-name="Pack x30" data-pack-price="100000">
         <div class="pack-top">
-          <h3>Pack x30</h3>
+          <h3>Pack x 30 Waffles</h3>
           <div class="pack-sub">El pack para stockearte</div>
         </div>
 
@@ -1957,24 +1957,23 @@ h1 {
     }
   }
 
-  function buildWhatsappMessage(packCard) {
-    const packSize = Number(packCard.dataset.packSize);
-    const packName = packCard.dataset.packName;
-    const packPrice = Number(packCard.dataset.packPrice);
-    const rows = packCard.querySelectorAll(".flavor-row");
+function buildWhatsappMessage(packCard) {
+  const packName = packCard.dataset.packName;
+  const packPrice = Number(packCard.dataset.packPrice);
+  const rows = packCard.querySelectorAll(".flavor-row");
 
-    const selectedFlavors = [];
-    rows.forEach(row => {
-      const flavor = row.dataset.flavor;
-      const qty = getQty(row);
+  const selectedFlavors = [];
+  rows.forEach(row => {
+    const flavor = row.dataset.flavor;
+    const qty = getQty(row);
 
-      if (qty > 0) {
-        selectedFlavors.push(`- ${flavor}: ${qty}`);
-      }
-    });
+    if (qty > 0) {
+      selectedFlavors.push(`- ${flavor}: ${qty}`);
+    }
+  });
 
-    return `Hola Ele! Quiero pedir en WaffEle:%0A%0A${packName}%0A- Total de unidades: ${packSize}%0A${selectedFlavors.join("%0A")}%0A%0ATotal: $${formatPrice(packPrice)}%0A%0AForma de entrega:%0A`;
-  }
+  return `Hola Ele! 👋🏼%0AQuiero pedir en WaffEle:%0A%0A🧇 ${packName}%0A%0A${selectedFlavors.join("%0A")}%0A%0A💵 Total: $${formatPrice(packPrice)}%0A%0A💰 Forma de pago:%0A%0A🎁 Forma de entrega:`;
+}
 
   document.querySelectorAll(".pack-card").forEach(packCard => {
     const packSize = Number(packCard.dataset.packSize);
