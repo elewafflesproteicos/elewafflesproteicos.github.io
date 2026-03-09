@@ -1501,7 +1501,7 @@ h1 {
     <div class="pack-grid">
 
       <!-- PACK X6 -->
-      <article class="pack-card" data-pack-size="6" data-pack-name="Pack x6" data-pack-price="25000">
+      <article class="pack-card" data-pack-size="6" data-pack-name="Pack x 6 Waffles proteicos" data-pack-price="25000">
         <div class="pack-top">
           <h3>Pack x 6 Waffles</h3>
           <div class="pack-sub">Ideal para empezar con WaffEle</div>
@@ -1561,7 +1561,7 @@ h1 {
       </article>
 
       <!-- PACK X14 -->
-      <article class="pack-card featured" data-pack-size="14" data-pack-name="Pack x14" data-pack-price="50000">
+      <article class="pack-card featured" data-pack-size="14" data-pack-name="Pack x 14 Waffles proteicos" data-pack-price="50000">
         <div class="badge">Más elegido</div>
 
         <div class="pack-top">
@@ -1623,7 +1623,7 @@ h1 {
       </article>
 
       <!-- PACK X30 -->
-      <article class="pack-card" data-pack-size="30" data-pack-name="Pack x30" data-pack-price="100000">
+      <article class="pack-card" data-pack-size="30" data-pack-name="Pack x 30 Waffles proteicos" data-pack-price="100000">
         <div class="pack-top">
           <h3>Pack x 30 Waffles</h3>
           <div class="pack-sub">El pack para stockearte</div>
@@ -2119,11 +2119,23 @@ function buildWhatsappMessage(packCard) {
     const qty = getQty(row);
 
     if (qty > 0) {
-      selectedFlavors.push(`- ${flavor}: ${qty}`);
+      selectedFlavors.push(`✅ ${flavor}: ${qty}`);
     }
   });
 
-  return `Hola Ele! 👋🏼%0AQuiero pedir en WaffEle:%0A%0A🧇 ${packName}%0A%0A${selectedFlavors.join("%0A")}%0A%0A💵 Total: $${formatPrice(packPrice)}%0A%0A💰 Forma de pago:%0A%0A🎁 Forma de entrega:`;
+  const message = `Hola Ele! 👋
+Quiero pedir en WaffEle:
+
+📦 ${packName}
+
+${selectedFlavors.join("\n")}
+
+Total: $${formatPrice(packPrice)}
+
+🎁 Forma de entrega:
+📍 Si es con envío, ¿a dónde?`;
+
+  return encodeURIComponent(message);
 }
 
   document.querySelectorAll(".pack-card").forEach(packCard => {
