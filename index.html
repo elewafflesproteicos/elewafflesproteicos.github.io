@@ -907,6 +907,23 @@ h1 {
     font-size: 14px;
     font-weight: 700;
   }
+  .info-inline {
+  background: #fcfaf8;
+  border: 1px solid rgba(17,24,39,0.06);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.info-inline p {
+  margin: 0;
+  line-height: 1.7;
+  color: rgba(17,24,39,0.76);
+  font-size: 15px;
+}
+
+.info-inline p + p {
+  margin-top: 10px;
+}
 
   .ingredients {
     background: #fcfaf8;
@@ -970,6 +987,11 @@ h1 {
   border-radius: 24px;
   padding: 24px;
 }
+  .story-content a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 .story-content p {
   margin: 0;
@@ -981,6 +1003,7 @@ h1 {
 .story-content p + p {
   margin-top: 14px;
 }
+  
     .story-pills {
   display: flex;
   flex-wrap: wrap;
@@ -1335,6 +1358,14 @@ h1 {
 .section-head p {
   text-align: left;
 }
+    .info-inline {
+  padding: 16px;
+}
+
+.info-inline p {
+  font-size: 14px;
+  line-height: 1.65;
+}
   }
   
 </style>
@@ -1654,21 +1685,19 @@ h1 {
         </div>
       </div>
 
-      <div class="nutrition-card">
-        <div class="nutrition-head">
-          <div>
-            <h2 style="font-size: 34px; color: var(--primary);">Información útil</h2>
-          </div>
-          <span class="nutrition-chip">Pedidos</span>
-        </div>
+    <div class="nutrition-card info-inline-card">
+  <div class="nutrition-head">
+    <div>
+      <h2 style="font-size: 34px; color: var(--primary);">Información útil</h2>
+    </div>
+  </div>
 
-        <div class="ingredients">
-          <p><strong>Retiro:</strong> Palermo, con coordinación previa.</p>
-          <p><strong>Envíos:</strong> a toda CABA.</p>
-          <p><strong>Pago:</strong> aceptamos transferencia, Mercado Pago.</p>
-          <p><strong>Coordinación:</strong> directamente por WhatsApp.</p>
-        </div>
-      </div>
+  <div class="info-inline">
+    <p><strong>Retiro:</strong> Palermo, con coordinación previa · <strong>Envíos:</strong> a toda CABA</p>
+    <p><strong>Pago:</strong> transferencia o Mercado Pago · <strong>Coordinación:</strong> por WhatsApp</p>
+  </div>
+</div>
+      
     </div>
   </div>
 </section>
@@ -1676,14 +1705,14 @@ h1 {
 <section id="nutricion" class="section">
   <div class="container">
     <div class="how-grid">
-      <div class="how-card">
-        <div class="section-head" style="margin-bottom: 0;">
-          <div>
-            <h2 style="font-size: 34px;">Cómo disfrutarlos</h2>
-          </div>
-        </div>
+   <div class="how-card">
+  <div class="nutrition-head" style="margin-bottom: 18px;">
+    <div>
+      <h2 style="font-size: 34px; color: var(--primary);">Paso a paso</h2>
+    </div>
+  </div>
 
-        <div class="steps">
+  <div class="steps">
           <div class="step">
             <div class="step-num">1</div>
             <div>
@@ -1939,10 +1968,10 @@ h1 {
     Hechos con proteína de suero de leche, estos waffles están pensados para sumar proteína sin perder tiempo, sin ensuciar de más y sin caer en lo mismo de siempre.
   </p>
 
-  <p>
-    En <strong>@waff.ele</strong> compartimos ideas para disfrutarlos, toppings, combinaciones y novedades de la marca, siempre con la misma intención: que comer nutritivo también se sienta simple y rico.
-  </p>
-
+<p>
+  En <strong><a href="https://www.instagram.com/waff.ele/" target="_blank" rel="noopener noreferrer">@waff.ele</a></strong> compartimos ideas para disfrutarlos, toppings, combinaciones y novedades de la marca, siempre con la misma intención: que comer nutritivo también se sienta simple y rico.
+</p>
+  
   <p>
     Listos en minutos, prácticos para freezer e ideales para sumar en desayunos, meriendas o como opción post entrenamiento.
   </p>
