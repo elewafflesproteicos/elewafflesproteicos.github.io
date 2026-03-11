@@ -432,6 +432,55 @@ h1 {
   padding: 30px;
   box-shadow: var(--shadow);
 }
+  .insta-link,
+.insta-coming {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  text-align: left;
+}
+
+.insta-link {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.insta-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(17, 24, 39, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.insta-coming {
+  opacity: 0.92;
+}
+
+.insta-post-label {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(228, 43, 103, 0.12);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.insta-link strong,
+.insta-coming strong {
+  color: var(--primary);
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.insta-link span:last-child,
+.insta-coming span:last-child {
+  color: rgba(17,24,39,0.72);
+  line-height: 1.55;
+  font-size: 14px;
+}
 
 @media (max-width: 760px) {
   .soft-wrap {
@@ -1987,13 +2036,31 @@ h1 {
         </p>
       </div>
 
-      <div class="instagram-grid">
-        <div class="insta-post">Próximamente</div>
-        <div class="insta-post">Próximamente</div>
-        <div class="insta-post">Próximamente</div>
-        <div class="insta-post">Próximamente</div>
-      </div>
-    </div>
+ <div class="instagram-grid">
+  <a class="insta-post insta-link" href="https://www.instagram.com/p/DVtjiqOEfV-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">
+    <span class="insta-post-label">Post 1</span>
+    <strong>Primera publicación</strong>
+    <span>La presentación de WaffEle y el propósito de la marca.</span>
+  </a>
+
+  <a class="insta-post insta-link" href="https://www.instagram.com/p/DVuDfMajwpY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">
+    <span class="insta-post-label">Post 2</span>
+    <strong>Beneficios de los waffles proteicos</strong>
+    <span>Una opción práctica, nutritiva y rica para resolver desayunos y meriendas.</span>
+  </a>
+
+  <div class="insta-post insta-coming">
+    <span class="insta-post-label">Próximamente</span>
+    <strong>Nueva publicación</strong>
+    <span>Más ideas, toppings y novedades para seguir sumando WaffEle a tu rutina.</span>
+  </div>
+
+  <div class="insta-post insta-coming">
+    <span class="insta-post-label">Próximamente</span>
+    <strong>Nuevo contenido</strong>
+    <span>Seguimos compartiendo formas ricas y prácticas de disfrutar tus waffles.</span>
+  </div>
+</div>
   </div>
 </section>
      
