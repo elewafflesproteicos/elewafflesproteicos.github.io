@@ -1507,7 +1507,7 @@ h1 {
 <section class="hero">
   <div class="container">
     <div class="hero-copy">
-      <h1>Waffles proteicos, prácticos y de verdad ricos</h1>
+      <h1>Waffles proteicos, prácticos y ricos de verdad</h1>
       <p class="hero-kicker">WaffEle en tu rutina</p>
 
       <div class="hero-media">
@@ -1545,7 +1545,7 @@ h1 {
     <h3>Tu semana resuelta con practicidad + proteína</h3>
 
    <p>
-  Pensada para acompañarte en el día a día con waffles ricos, prácticos y fáciles de sumar a tu rutina.
+  Pensada para acompañarte en el día a día: waffles ricos, prácticos y fáciles de sumar a tu rutina.
   Sin azúcar ni edulcorante agregado, libres de sellos y listos para disfrutar en minutos.
 </p>
 
@@ -1786,7 +1786,7 @@ h1 {
             <div class="step-num">1</div>
             <div>
               <h4>Armá tu pack</h4>
-              <p>Elegí el tamaño y combiná los sabores como quieras.</p>
+              <p>Elegí la cantidad y combiná los sabores como quieras.</p>
             </div>
           </div>
 
@@ -2212,21 +2212,21 @@ function buildWhatsappMessage(packCard) {
     const qty = getQty(row);
 
     if (qty > 0) {
-      selectedFlavors.push(`✅ ${flavor}: ${qty}`);
+   selectedFlavors.push(`- ${flavor}: ${qty}`);
     }
   });
 
-  const message = `Hola Ele! 👋
+  const message = `Hola Ele!
 Quiero pedir en WaffEle:
 
-📦 ${packName}
+${packName}
 
 ${selectedFlavors.join("\n")}
 
 Total: $${formatPrice(packPrice)}
 
-🎁 Forma de entrega:
-📍 Si es con envío, ¿a dónde?`;
+Forma de entrega:
+Si es con envío, ¿a dónde?`;
 
   return encodeURIComponent(message);
 }
