@@ -296,10 +296,24 @@ h1 {
 
 .linea-top {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+}
+
+.linea-main-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
 }
 
 .linea-badge {
@@ -1541,8 +1555,8 @@ h1 {
 <section class="linea-section">
   <div class="container linea-wrap">
     <div class="linea-card">
-   <div class="linea-top">
-  <span class="linea-small">Línea Proteica</span>
+<div class="linea-top">
+  <span class="linea-small linea-main-label">Línea Proteica</span>
   <span class="linea-badge">20 g de proteína por waffle</span>
 </div>
 
@@ -1552,17 +1566,6 @@ h1 {
   Pensada para acompañarte en el día a día: waffles ricos, prácticos y fáciles de sumar a tu rutina.
   Sin azúcar ni edulcorante agregado, libres de sellos y listos para disfrutar en minutos.
 </p>
-
-<div class="macro-row macro-row-two">
-  <div class="macro">
-    <strong>20g</strong>
-    <span>proteína</span>
-  </div>
-  <div class="macro">
-    <strong>2 min</strong>
-    <span>listos</span>
-  </div>
-</div>
     </div>
   </div>
 </section>
