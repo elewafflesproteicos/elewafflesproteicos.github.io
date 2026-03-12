@@ -1596,7 +1596,6 @@ h1 {
 
         <div class="selector-box">
           <div class="selector-head">
-            <strong>Elegí tus sabores</strong>
             <span class="counter-summary">0 / 6 unidades</span>
           </div>
 
@@ -1658,7 +1657,6 @@ h1 {
 
         <div class="selector-box">
           <div class="selector-head">
-            <strong>Elegí tus sabores</strong>
             <span class="counter-summary">0 / 14 unidades</span>
           </div>
 
@@ -1718,7 +1716,6 @@ h1 {
 
         <div class="selector-box">
           <div class="selector-head">
-            <strong>Elegí tus sabores</strong>
             <span class="counter-summary">0 / 30 unidades</span>
           </div>
 
@@ -2192,7 +2189,7 @@ h1 {
       total += getQty(row);
     });
 
-    summary.textContent = `${total} / ${packSize} unidades`;
+summary.textContent = `${total} de ${packSize} unidades`;
 
     if (total === 0) {
       validation.textContent = "Elegí cuántas unidades querés de cada sabor.";
