@@ -624,14 +624,14 @@ h1 {
 
 .section-head {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
   margin-bottom: 22px;
 }
 
 .section-head > div {
-  flex: 1 1 0;
+  width: 100%;
 }
 
 .section-head h2 {
@@ -640,7 +640,7 @@ h1 {
 }
 
 .section-head p {
-  flex: 1 1 0;
+  width: 100%;
   max-width: 56ch;
   margin: 0;
   color: rgba(17,24,39,0.72);
