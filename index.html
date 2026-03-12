@@ -778,17 +778,6 @@ h1 {
   display: none;
 }
 
-  .selector-head strong {
-    color: var(--deep);
-    font-size: 15px;
-  }
-
-  .counter-summary {
-    font-size: 13px;
-    color: var(--muted);
-    font-weight: 800;
-  }
-
   .flavor-row {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -1033,6 +1022,40 @@ h1 {
     font-size: 14px;
     font-weight: 700;
   }
+.info-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.info-dot {
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  border-radius: 999px;
+  background: var(--primary);
+  margin-top: 9px;
+}
+
+.info-item h4 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--deep);
+}
+
+.info-item p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.6;
+}
+  
   .info-inline {
   background: #fcfaf8;
   border: 1px solid rgba(17,24,39,0.06);
@@ -1827,43 +1850,43 @@ h1 {
 <section id="nutricion" class="section">
   <div class="container">
     <div class="how-grid">
-   <div class="how-card">
-  <div class="nutrition-head" style="margin-bottom: 18px;">
-    <div>
-      <h2 style="font-size: 34px; color: var(--primary);">Cómo disfrutarlos</h2>
-    </div>
-  </div>
+      <div class="how-card">
+        <div class="nutrition-head" style="margin-bottom: 18px;">
+          <div>
+            <h2 style="font-size: 34px; color: var(--primary);">Para disfrutarlos mejor</h2>
+          </div>
+        </div>
 
-  <div class="steps">
-          <div class="step">
-            <div class="step-num">1</div>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-dot"></span>
             <div>
-              <h4>Producto elaborado fresco en el día</h4>
-              <p>Una vez que los recibís, conservalos en freezer para mantener mejor textura, practicidad y organización.</p>
+              <h4>Frescos y listos para guardar</h4>
+              <p>Están elaborados en el día. Al recibirlos, guardalos en freezer para tenerlos siempre a mano.</p>
             </div>
           </div>
 
-          <div class="step">
-            <div class="step-num">2</div>
+          <div class="info-item">
+            <span class="info-dot"></span>
             <div>
-              <h4>Conservación</h4>
-              <p>Conservar en freezer. Se recomienda consumir dentro de los 2 meses para disfrutarlos al máximo.</p>
+              <h4>Cómo conservarlos</h4>
+              <p>Mantenelos en freezer y consumilos preferentemente dentro de los 2 meses.</p>
             </div>
           </div>
 
-          <div class="step">
-            <div class="step-num">3</div>
+          <div class="info-item">
+            <span class="info-dot"></span>
             <div>
-              <h4>Modo de consumo</h4>
-              <p>Calentar directamente sin descongelar: tostadora 2–3 minutos, sartén vuelta y vuelta u horno unos minutos hasta dorar.</p>
+              <h4>Cómo calentarlos</h4>
+              <p>No hace falta descongelarlos: podés llevarlos directo a tostadora, sartén u horno hasta que queden doraditos.</p>
             </div>
           </div>
 
-          <div class="step">
-            <div class="step-num">4</div>
+          <div class="info-item">
+            <span class="info-dot"></span>
             <div>
-              <h4>Ideas para acompañarlos</h4>
-              <p>Para más ideas de toppings y combinaciones, seguinos en Instagram y descubrí nuevas formas de disfrutarlos.</p>
+              <h4>Cómo acompañarlos</h4>
+              <p>Sumales frutas, yogur, pasta de maní o los toppings que más te gusten. En Instagram vas a encontrar más ideas.</p>
             </div>
           </div>
         </div>
@@ -1953,7 +1976,7 @@ h1 {
 
       <div class="faq">
         <strong>¿Hacen envíos?</strong>
-        <p>Sí, hacemos envíos a toda CABA y también podés retirar por Palermo ó Mercedes, Buenos Aires con coordinación previa.</p>
+  <p>Sí, hacemos envíos a toda CABA y también a Mercedes, Buenos Aires. El retiro se coordina en Palermo.</p>
       </div>
 
       <div class="faq">
@@ -1963,7 +1986,7 @@ h1 {
 
       <div class="faq">
         <strong>¿Qué formas de pago aceptan?</strong>
-        <p>Aceptamos transferencia, Mercado Pago.</p>
+      <p>El pago se realiza por transferencia.</p>
       </div>
     </div>
   </div>
@@ -2012,7 +2035,7 @@ h1 {
   <div class="container">
     <div class="story-box">
     <div class="story-head">
-  <h2 class="story-title">Pensado desde la nutrición a la practicidad</h2>
+<h2 class="story-title">De la nutrición a tu rutina</h2>
   <p class="story-subtitle">
     WaffEle nace para demostrar que comer nutritivo también puede ser rico, práctico y parte de tu rutina.
   </p>
@@ -2094,7 +2117,6 @@ h1 {
   function updatePackState(packCard) {
     const packSize = Number(packCard.dataset.packSize);
     const rows = packCard.querySelectorAll(".flavor-row");
-    const summary = packCard.querySelector(".counter-summary");
     const validation = packCard.querySelector(".validation");
 
     let total = 0;
