@@ -826,10 +826,7 @@ h1 {
   }
 
 .selector-head {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 14px;
+  display: none;
 }
 
   .selector-head strong {
@@ -1648,9 +1645,7 @@ h1 {
         </div>
 
         <div class="selector-box">
-          <div class="selector-head">
-            <span class="counter-summary">0 / 6 unidades</span>
-          </div>
+        <div class="selector-head"></div>
 
           <div class="flavor-row" data-flavor="Clásico">
             <div class="flavor-name"><strong>Clásico</strong></div>
@@ -1709,9 +1704,7 @@ h1 {
         </div>
 
         <div class="selector-box">
-          <div class="selector-head">
-            <span class="counter-summary">0 / 14 unidades</span>
-          </div>
+        <div class="selector-head"></div>
 
           <div class="flavor-row" data-flavor="Clásico">
             <div class="flavor-name"><strong>Clásico</strong></div>
@@ -1768,9 +1761,7 @@ h1 {
         </div>
 
         <div class="selector-box">
-          <div class="selector-head">
-            <span class="counter-summary">0 / 30 unidades</span>
-          </div>
+        <div class="selector-head"></div>
 
           <div class="flavor-row" data-flavor="Clásico">
             <div class="flavor-name"><strong>Clásico</strong></div>
@@ -2182,10 +2173,10 @@ h1 {
       total += getQty(row);
     });
 
-    if (total === 0) {
-      validation.textContent = "Elegí cuántas unidades querés de cada sabor.";
-      validation.className = "validation";
-    } else if (total < packSize) {
+ if (total === 0) {
+  validation.textContent = "Combiná los sabores hasta completar tu pack.";
+  validation.className = "validation";
+} else if (total < packSize) {
       validation.textContent = `Te faltan ${packSize - total} unidades para completar el pack.`;
       validation.className = "validation error";
     } else if (total > packSize) {
