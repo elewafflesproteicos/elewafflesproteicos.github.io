@@ -297,23 +297,20 @@ h1 {
 
 .linea-top {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
   margin-bottom: 18px;
+  flex-wrap: wrap;
 }
 
-.linea-main-label {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.18);
+.linea-title {
+  margin: 0;
   color: white;
-  font-size: 18px;
+  font-size: clamp(28px, 3.2vw, 42px);
+  line-height: 1;
   font-weight: 800;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
 }
 
@@ -321,18 +318,18 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(207, 245, 226, 0.9);
+  background: rgba(207, 245, 226, 0.95);
   color: #14532d;
   border-radius: 999px;
-  padding: 8px 14px;
+  padding: 9px 15px;
   font-size: 13px;
   font-weight: 800;
+  white-space: nowrap;
 }
 
-.linea-small {
-  font-size: 14px;
-  opacity: 0.9;
-  font-weight: 700;
+.linea-small,
+.linea-main-label {
+  display: none;
 }
 
 .linea-card h3 {
@@ -521,6 +518,20 @@ h1 {
 }
 
 @media (max-width: 760px) {
+
+.linea-top {
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.linea-title {
+  font-size: 26px;
+}
+
+.linea-badge {
+  font-size: 12px;
+}
+  
   .soft-wrap {
     padding: 20px;
     border-radius: 26px;
@@ -1545,7 +1556,7 @@ h1 {
   <div class="container linea-wrap">
     <div class="linea-card">
 <div class="linea-top">
-  <span class="linea-small linea-main-label">Línea Proteica</span>
+  <h2 class="linea-title">Línea Proteica</h2>
   <span class="linea-badge">20 g de proteína por waffle</span>
 </div>
 
@@ -1804,7 +1815,7 @@ h1 {
 
 <div class="info-inline">
   <p><strong> · Retiro:</strong> Palermo, con coordinación previa</p>
-  <p><strong> · Envíos:</strong> A toda CABA</p>
+  <p><strong> · Envíos:</strong> A toda CABA y Mercedes</p>
   <p><strong> · Entrega estimada:</strong> Aproximadamente 3 días hábiles</p>
   <p><strong> · Pago:</strong> Transferencia</p>
 </div>
@@ -1943,7 +1954,7 @@ h1 {
 
       <div class="faq">
         <strong>¿Hacen envíos?</strong>
-        <p>Sí, hacemos envíos a toda CABA y también podés retirar por Palermo con coordinación previa.</p>
+        <p>Sí, hacemos envíos a toda CABA y también podés retirar por Palermo ó Mercedes, Buenos Aires con coordinación previa.</p>
       </div>
 
       <div class="faq">
