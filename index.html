@@ -516,6 +516,148 @@ h1 {
   opacity: 0.92;
 }
 
+/* =========================
+   Línea SOFT
+========================= */
+
+.soft-linea-section {
+  padding: 8px 0 34px;
+}
+
+.soft-linea-card {
+  background: linear-gradient(135deg, var(--accent) 0%, #c51f58 100%);
+  color: white;
+  border-radius: 32px;
+  padding: 40px 36px;
+  box-shadow: 0 18px 38px rgba(228, 43, 103, 0.20);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.soft-linea-card .linea-title,
+.soft-linea-card h3 {
+  color: white;
+}
+
+.soft-linea-card .linea-badge {
+  background: rgba(255, 243, 234, 0.96);
+  color: var(--primary);
+}
+
+.soft-linea-card p {
+  color: rgba(255,255,255,0.92);
+  line-height: 1.62;
+  margin: 0;
+  max-width: 88ch;
+  font-size: 18px;
+}
+
+.soft-compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+  max-width: 720px;
+}
+
+.soft-compare-item {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.soft-compare-item strong {
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.soft-compare-item span {
+  display: block;
+  color: rgba(255,255,255,0.86);
+  line-height: 1.45;
+  font-size: 14px;
+}
+
+.soft-suggestion {
+  margin-top: 22px;
+  background: rgba(255, 243, 234, 0.14);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 18px;
+  padding: 16px 18px;
+  color: rgba(255,255,255,0.92);
+  font-weight: 600;
+  line-height: 1.5;
+  max-width: 760px;
+}
+
+.soft-packs-section {
+  padding-top: 0;
+}
+
+.soft-packs-section .section-head h2 {
+  color: var(--accent);
+}
+
+.soft-packs-section .section-head p {
+  color: rgba(17,24,39,0.72);
+}
+
+.soft-pack-card {
+  border-color: rgba(228, 43, 103, 0.12);
+}
+
+.soft-pack-card.featured {
+  border-color: rgba(51, 60, 142, 0.24);
+  box-shadow: 0 14px 32px rgba(51, 60, 142, 0.12);
+}
+
+.soft-pack-card .badge {
+  background: var(--primary);
+}
+
+.soft-pack-card .pack-top h3 {
+  color: var(--accent);
+}
+
+.soft-pack-card .price strong {
+  color: var(--primary);
+}
+
+.soft-pack-card .qty-btn {
+  background: rgba(228, 43, 103, 0.10);
+  color: var(--accent);
+}
+
+.soft-pack-card .qty-btn:hover {
+  background: rgba(228, 43, 103, 0.16);
+}
+
+.soft-pack-card .btn-primary {
+  background: var(--accent);
+  box-shadow: 0 10px 24px rgba(228, 43, 103, 0.24);
+}
+
+.soft-pack-card .btn-primary:hover {
+  box-shadow: 0 14px 28px rgba(228, 43, 103, 0.32);
+}
+
+@media (max-width: 760px) {
+  .soft-linea-card {
+    padding: 24px;
+    border-radius: 26px;
+  }
+
+  .soft-linea-card p {
+    font-size: 16px;
+  }
+
+  .soft-compare {
+    grid-template-columns: 1fr;
+  }
+}
+  
 @media (max-width: 760px) {
 
 .linea-top {
@@ -1774,7 +1916,7 @@ h1 {
 
         <div class="pack-footer">
           <div class="validation"></div>
-          <button class="btn btn-primary whatsapp-btn" type="button">Listo! Encarga los tuyos por WhatsApp</button>
+          <button class="btn btn-primary whatsapp-btn" type="button">Listo! Encargá los tuyos por WhatsApp</button>
         </div>
       </article>
 
@@ -1782,6 +1924,232 @@ h1 {
   </div>
 </section>
 
+<section class="soft-linea-section">
+  <div class="container linea-wrap">
+    <div class="soft-linea-card">
+      <div class="linea-top">
+        <h2 class="linea-title">Línea SOFT</h2>
+        <span class="linea-badge">Sin whey · más suave y cotidiana</span>
+      </div>
+
+      <h3>Una versión más clásica, liviana y fácil de disfrutar todos los días</h3>
+
+      <p>
+        La Línea SOFT está pensada para quienes buscan una WaffEle más suave y cotidiana:
+        sin proteína whey, con proteína natural de sus ingredientes y una textura más clásica.
+        Ideal para resolver desayunos y meriendas de forma práctica, rica y simple.
+      </p>
+
+      <div class="soft-compare">
+        <div class="soft-compare-item">
+          <strong>Proteica</strong>
+          <span>Más funcional, con 20 g de proteína por waffle.</span>
+        </div>
+
+        <div class="soft-compare-item">
+          <strong>SOFT</strong>
+          <span>Más suave, sin whey y pensada para todos los días.</span>
+        </div>
+      </div>
+
+      <div class="soft-suggestion">
+        ¿Te gustaría probar otro sabor? Escribinos tu idea y la tenemos en cuenta para próximas tandas.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="packs-soft" class="section soft-packs-section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Armá tu Pack SOFT</h2>
+      </div>
+      <p>
+        Elegí tu pack SOFT, combiná los sabores como quieras y armá tu pedido.
+      </p>
+    </div>
+
+    <div class="pack-grid">
+
+      <!-- PACK SOFT X6 -->
+      <article class="pack-card soft-pack-card" data-pack-size="6" data-pack-name="Pack x 6 Waffles SOFT" data-pack-price="18000">
+        <div class="pack-top">
+          <h3>Pack x 6 SOFT</h3>
+          <div class="pack-sub">Ideal para probar la línea más suave</div>
+        </div>
+
+        <div class="price">
+          <strong>$18.000</strong>
+        </div>
+
+        <div class="selector-box">
+          <div class="selector-head"></div>
+
+          <div class="flavor-row" data-flavor="Clásico">
+            <div class="flavor-name"><strong>Clásico</strong></div>
+            <div class="qty-controls">
+              <button class="qty-btn minus" type="button">−</button>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
+              <button class="qty-btn plus" type="button">+</button>
+            </div>
+          </div>
+
+          <div class="flavor-row" data-flavor="Vainilla">
+            <div class="flavor-name"><strong>Vainilla</strong></div>
+            <div class="qty-controls">
+              <button class="qty-btn minus" type="button">−</button>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
+              <button class="qty-btn plus" type="button">+</button>
+            </div>
+          </div>
+
+          <div class="flavor-row" data-flavor="Banana">
+            <div class="flavor-name"><strong>Banana</strong></div>
+            <div class="qty-controls">
+              <button class="qty-btn minus" type="button">−</button>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
+              <button class="qty-btn plus" type="button">+</button>
+            </div>
+          </div>
+
+          <div class="flavor-row" data-flavor="Cacao y banana">
+            <div class="flavor-name"><strong>Cacao y banana</strong></div>
+            <div class="qty-controls">
+              <button class="qty-btn minus" type="button">−</button>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
+              <button class="qty-btn plus" type="button">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pack-footer">
+          <div class="validation"></div>
+          <button class="btn btn-primary whatsapp-btn" type="button">Listo! Encargá los tuyos por WhatsApp</button>
+        </div>
+      </article>
+
+      <!-- PACK SOFT X14 -->
+      <article class="pack-card soft-pack-card featured" data-pack-size="14" data-pack-name="Pack x 14 Waffles SOFT" data-pack-price="40000">
+        <div class="badge">Más elegido</div>
+
+        <div class="pack-top">
+          <h3>Pack x 14 SOFT</h3>
+          <div class="pack-sub">Para tener la semana resuelta</div>
+        </div>
+
+        <div class="price">
+          <strong>$40.000</strong>
+        </div>
+
+        <div class="selector-box">
+          <div class="selector-head"></div>
+
+          <div class="flavor-row" data-flavor="Clásico">
+            <div class="flavor-name"><strong>Clásico</strong></div>
+            <div class="qty-controls">
+              <button class="qty-btn minus" type="button">−</button>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
+              <button class="qty-btn plus" type="button">+</button>
+            </div>
+          </div>
+
+          <div class="flavor-row" data-flavor="Vainilla">
+            <div class="flavor-name"><strong>Vainilla</strong></div>
+            <div class="qty-controls">
+              <button class="qty-btn minus" type="button">−</button>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
+              <button class="qty-btn plus" type="button">+</button>
+            </div>
+          </div>
+
+          <div class="flavor-row" data-flavor="Banana">
+            <div class="flavor-name"><strong>Banana</strong></div>
+            <div class="qty-controls">
+              <button class="qty-btn minus" type="button">−</button>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
+              <button class="qty-btn plus" type="button">+</button>
+            </div>
+          </div>
+
+          <div class="flavor-row" data-flavor="Cacao y banana">
+            <div class="flavor-name"><strong>Cacao y banana</strong></div>
+            <div class="qty-controls">
+              <button class="qty-btn minus" type="button">−</button>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
+              <button class="qty-btn plus" type="button">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pack-footer">
+          <div class="validation"></div>
+          <button class="btn btn-primary whatsapp-btn" type="button">Listo! Encargá los tuyos por WhatsApp</button>
+        </div>
+      </article>
+
+      <!-- PACK SOFT X30 -->
+      <article class="pack-card soft-pack-card" data-pack-size="30" data-pack-name="Pack x 30 Waffles SOFT" data-pack-price="78000">
+        <div class="pack-top">
+          <h3>Pack x 30 SOFT</h3>
+          <div class="pack-sub">El pack para stockearte</div>
+        </div>
+
+        <div class="price">
+          <strong>$78.000</strong>
+        </div>
+
+        <div class="selector-box">
+          <div class="selector-head"></div>
+
+          <div class="flavor-row" data-flavor="Clásico">
+            <div class="flavor-name"><strong>Clásico</strong></div>
+            <div class="qty-controls">
+              <button class="qty-btn minus" type="button">−</button>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
+              <button class="qty-btn plus" type="button">+</button>
+            </div>
+          </div>
+
+          <div class="flavor-row" data-flavor="Vainilla">
+            <div class="flavor-name"><strong>Vainilla</strong></div>
+            <div class="qty-controls">
+              <button class="qty-btn minus" type="button">−</button>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
+              <button class="qty-btn plus" type="button">+</button>
+            </div>
+          </div>
+
+          <div class="flavor-row" data-flavor="Banana">
+            <div class="flavor-name"><strong>Banana</strong></div>
+            <div class="qty-controls">
+              <button class="qty-btn minus" type="button">−</button>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
+              <button class="qty-btn plus" type="button">+</button>
+            </div>
+          </div>
+
+          <div class="flavor-row" data-flavor="Cacao y banana">
+            <div class="flavor-name"><strong>Cacao y banana</strong></div>
+            <div class="qty-controls">
+              <button class="qty-btn minus" type="button">−</button>
+              <input class="qty-value" type="number" min="0" value="0" inputmode="numeric">
+              <button class="qty-btn plus" type="button">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pack-footer">
+          <div class="validation"></div>
+          <button class="btn btn-primary whatsapp-btn" type="button">Listo! Encargá los tuyos por WhatsApp</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+    
 <section class="section">
   <div class="container">
     <div class="section-head">
