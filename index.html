@@ -573,6 +573,122 @@ h1 {
   box-shadow: 0 14px 28px rgba(17, 24, 39, 0.16);
 }
 
+  /* =========================
+   Salsa Taste
+========================= */
+
+.taste-box {
+  margin-top: 16px;
+  background: #fff7ea;
+  border: 1px solid rgba(166, 43, 43, 0.18);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 10px 24px rgba(166, 43, 43, 0.08);
+}
+
+.taste-box[hidden] {
+  display: none;
+}
+
+.taste-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.taste-kicker {
+  display: inline-flex;
+  margin-bottom: 8px;
+  background: rgba(166, 43, 43, 0.10);
+  color: #a62b2b;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.taste-head h4 {
+  margin: 0 0 6px;
+  color: #a62b2b;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.taste-head p {
+  margin: 0;
+  color: rgba(17,24,39,0.72);
+  line-height: 1.45;
+  font-size: 14px;
+}
+
+.taste-price {
+  background: #a62b2b;
+  color: white;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.taste-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 9px;
+}
+
+.taste-option {
+  cursor: pointer;
+}
+
+.taste-option input {
+  display: none;
+}
+
+.taste-option span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: white;
+  border: 1px solid rgba(166, 43, 43, 0.14);
+  border-radius: 16px;
+  padding: 11px 13px;
+  color: var(--deep);
+  font-size: 14px;
+  font-weight: 800;
+  transition: 0.18s ease;
+}
+
+.taste-option span small {
+  color: #a62b2b;
+  font-weight: 900;
+}
+
+.taste-option input:checked + span {
+  background: #a62b2b;
+  color: white;
+  border-color: #a62b2b;
+}
+
+.taste-option input:checked + span small {
+  color: white;
+}
+
+@media (max-width: 760px) {
+  .taste-head {
+    flex-direction: column;
+  }
+
+  .taste-price {
+    align-self: flex-start;
+  }
+}
+
 .soft-packs-section {
   padding-top: 0;
 }
@@ -2616,6 +2732,174 @@ h1 {
 <script>
   const WHATSAPP_NUMBER = "5492324476880";
 
+const SAUCE_PRICE = 15000;
+
+const TASTE_SAUCES = [
+  {
+    name: "Sin salsa",
+    price: 0,
+    none: true
+  },
+  {
+    name: "Salsa de chocolate con avellana Mrs. Taste",
+    price: SAUCE_PRICE
+  },
+  {
+    name: "Salsa de dulce de leche Mrs. Taste",
+    price: SAUCE_PRICE
+  },
+  {
+    name: "Salsa de chocolate Mrs. Taste",
+    price: SAUCE_PRICE
+  },
+  {
+    name: "Salsa de caramelo Mrs. Taste",
+    price: SAUCE_PRICE
+  }
+];
+
+function createTasteSelector(packCard, index) {
+  const selectorBox = packCard.querySelector(".selector-box");
+
+  if (!selectorBox || packCard.querySelector(".taste-box")) {
+    return;
+  }
+
+  const optionsHtml = TASTE_SAUCES.map((sauce, sauceIndex) => {
+    const checked = sauceIndex === 0 ? "checked" : "";
+    const priceLabel = sauce.price > 0 ? `<small>+$${formatPrice(sauce.price)}</small>` : "";
+    const noneAttr = sauce.none ? `data-none="true"` : "";
+
+    return `
+      <label class="taste-option">
+        <input
+          type="checkbox"
+          name="taste-sauce-${index}"
+          value="${sauce.name}"
+          data-price="${sauce.price}"
+          ${noneAttr}
+          ${checked}
+        >
+        <span>${sauce.name}${priceLabel}</span>
+      </label>
+    `;
+  }).join("");
+
+  selectorBox.insertAdjacentHTML("afterend", `
+    <div class="taste-box" hidden>
+      <div class="taste-head">
+        <div>
+          <span class="taste-kicker">Opcional</span>
+          <h4>Sumá tu Salsa Taste</h4>
+          <p>Elegí una o más salsas para llevar tu pack al próximo nivel.</p>
+        </div>
+
+        <div class="taste-price">+$${formatPrice(SAUCE_PRICE)} c/u</div>
+      </div>
+
+      <div class="taste-options">
+        ${optionsHtml}
+      </div>
+    </div>
+  `);
+
+  setupTasteSelectorBehavior(packCard);
+}
+
+function setupTasteSelectorBehavior(packCard) {
+  const tasteBox = packCard.querySelector(".taste-box");
+
+  if (!tasteBox) {
+    return;
+  }
+
+  const inputs = tasteBox.querySelectorAll(".taste-option input");
+  const noneInput = tasteBox.querySelector('.taste-option input[data-none="true"]');
+
+  inputs.forEach(input => {
+    input.addEventListener("change", () => {
+      if (input.dataset.none === "true" && input.checked) {
+        inputs.forEach(otherInput => {
+          if (otherInput !== input) {
+            otherInput.checked = false;
+          }
+        });
+      }
+
+      if (input.dataset.none !== "true" && input.checked && noneInput) {
+        noneInput.checked = false;
+      }
+
+      const selectedSauces = Array.from(inputs).filter(item => {
+        return item.checked && item.dataset.none !== "true";
+      });
+
+      if (selectedSauces.length === 0 && noneInput) {
+        noneInput.checked = true;
+      }
+    });
+  });
+}
+
+function getSelectedSauces(packCard) {
+  const checkedSauces = Array.from(
+    packCard.querySelectorAll(".taste-option input:checked")
+  );
+
+  const realSauces = checkedSauces
+    .filter(input => input.dataset.none !== "true")
+    .map(input => {
+      return {
+        name: input.value,
+        price: Number(input.dataset.price || 0)
+      };
+    });
+
+  if (realSauces.length === 0) {
+    return [
+      {
+        name: "Sin salsa",
+        price: 0
+      }
+    ];
+  }
+
+  return realSauces;
+}
+
+function getSaucesTotal(packCard) {
+  return getSelectedSauces(packCard).reduce((total, sauce) => {
+    return total + sauce.price;
+  }, 0);
+}
+
+function updateTasteVisibility(packCard) {
+  const tasteBox = packCard.querySelector(".taste-box");
+
+  if (!tasteBox) {
+    return;
+  }
+
+  const total = getPackTotal(packCard);
+
+  if (total > 0) {
+    tasteBox.hidden = false;
+  } else {
+    tasteBox.hidden = true;
+
+    const inputs = tasteBox.querySelectorAll(".taste-option input");
+    const noneInput = tasteBox.querySelector('.taste-option input[data-none="true"]');
+
+    inputs.forEach(input => {
+      input.checked = false;
+    });
+
+    if (noneInput) {
+      noneInput.checked = true;
+    }
+  }
+}
+  
   function formatPrice(price) {
     return new Intl.NumberFormat("es-AR").format(price);
   }
@@ -2665,12 +2949,17 @@ h1 {
       validation.textContent = "Perfecto. Tu pack ya está listo para pedir.";
       validation.className = "validation ok";
     }
+
+    updateTasteVisibility(packCard);
   }
 
 function buildWhatsappMessage(packCard) {
   const packName = packCard.dataset.packName;
   const packPrice = Number(packCard.dataset.packPrice);
   const rows = packCard.querySelectorAll(".flavor-row");
+  const selectedSauces = getSelectedSauces(packCard);
+  const saucesTotal = getSaucesTotal(packCard);
+  const finalPrice = packPrice + saucesTotal;
 
   const selectedFlavors = [];
   rows.forEach(row => {
@@ -2678,9 +2967,17 @@ function buildWhatsappMessage(packCard) {
     const qty = getQty(row);
 
     if (qty > 0) {
-   selectedFlavors.push(`- ${flavor}: ${qty}`);
+      selectedFlavors.push(`- ${flavor}: ${qty}`);
     }
   });
+
+  const saucesText = selectedSauces.map(sauce => {
+    if (sauce.price > 0) {
+      return `- ${sauce.name}: +$${formatPrice(sauce.price)}`;
+    }
+
+    return `- Sin salsa`;
+  }).join("\n");
 
   const message = `Hola Ele!
 Quiero pedir en WaffEle:
@@ -2689,7 +2986,10 @@ ${packName}
 
 ${selectedFlavors.join("\n")}
 
-Total: $${formatPrice(packPrice)}
+Salsa Taste:
+${saucesText}
+
+Total: $${formatPrice(finalPrice)}
 
 Forma de entrega:
 Si es con envío, ¿a dónde?`;
@@ -2697,8 +2997,10 @@ Si es con envío, ¿a dónde?`;
   return encodeURIComponent(message);
 }
 
-  document.querySelectorAll(".pack-card").forEach(packCard => {
-    const packSize = Number(packCard.dataset.packSize);
+document.querySelectorAll(".pack-card").forEach((packCard, index) => {
+  createTasteSelector(packCard, index);
+
+  const packSize = Number(packCard.dataset.packSize);
 
     packCard.querySelectorAll(".plus").forEach(btn => {
       btn.addEventListener("click", () => {
