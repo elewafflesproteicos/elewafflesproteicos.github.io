@@ -1215,6 +1215,128 @@ h1 {
 .ingredients p + p {
   margin-top: 12px;
 }
+
+  /* =========================
+   Nutrición comparativa
+========================= */
+
+.nutrition-comparison-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+.nutrition-lines-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.nutrition-line {
+  background: #fcfaf8;
+  border: 1px solid rgba(17,24,39,0.06);
+  border-radius: 24px;
+  padding: 22px;
+}
+
+.nutrition-line.soft-nutrition {
+  background: rgba(255, 214, 228, 0.28);
+  border-color: rgba(228, 43, 103, 0.12);
+}
+
+.nutrition-line .nutrition-head {
+  margin-bottom: 18px;
+}
+
+.nutrition-line h3 {
+  font-size: 28px;
+  color: var(--primary);
+}
+
+.soft-nutrition h3 {
+  color: var(--accent);
+}
+
+.soft-nutrition .nutrition-chip {
+  background: rgba(228, 43, 103, 0.12);
+  color: var(--accent);
+}
+
+.soft-nutrition .nutri-item strong {
+  color: var(--accent);
+}
+
+/* =========================
+   Para disfrutarlos mejor horizontal
+========================= */
+
+.enjoy-section {
+  padding-top: 0;
+}
+
+.enjoy-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+.enjoy-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.enjoy-item {
+  background: #fcfaf8;
+  border: 1px solid rgba(17,24,39,0.06);
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.enjoy-item .info-dot {
+  display: block;
+  margin: 0 0 12px;
+}
+
+.enjoy-item h4 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--deep);
+}
+
+.enjoy-item p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+@media (max-width: 1100px) {
+  .nutrition-lines-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .enjoy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .nutrition-comparison-card,
+  .enjoy-card {
+    padding: 20px;
+  }
+
+  .enjoy-grid {
+    grid-template-columns: 1fr;
+  }
+}
   
 .story-section {
   padding: 26px 0 72px;
@@ -1912,8 +2034,7 @@ h1 {
       <h3>El mismo espíritu práctico, en una versión más liviana</h3>
 
       <p>
-        Pensada para quienes buscan un waffle más suave: con proteína natural de sus ingredientes,
-        sin proteína whey y una textura más ligera. Ideal para resolver desayunos y meriendas de forma
+        Pensada para quienes buscan un waffle más suave: con proteína natural de sus ingredientes y una textura más ligera. Ideal para resolver desayunos y meriendas de forma
         práctica, rica y simple.
       </p>
 
@@ -2187,98 +2308,162 @@ h1 {
 
 <section id="nutricion" class="section">
   <div class="container">
-    <div class="how-grid">
-      <div class="how-card">
-        <div class="nutrition-head" style="margin-bottom: 18px;">
-          <div>
-            <h2 style="font-size: 34px; color: var(--primary);">Para disfrutarlos mejor</h2>
-          </div>
+    <div class="nutrition-comparison-card">
+      <div class="section-head">
+        <div>
+          <h2>Información nutricional</h2>
         </div>
-
-        <div class="info-list">
-          <div class="info-item">
-            <span class="info-dot"></span>
-            <div>
-              <h4>Frescos y listos para guardar</h4>
-              <p>Están elaborados en el día. Al recibirlos, guardalos en freezer para tenerlos siempre a mano.</p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <span class="info-dot"></span>
-            <div>
-              <h4>Cómo conservarlos</h4>
-              <p>Mantenelos en freezer y consumilos preferentemente dentro de los 2 meses.</p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <span class="info-dot"></span>
-            <div>
-              <h4>Cómo calentarlos</h4>
-              <p>No hace falta descongelarlos: podés llevarlos directo a tostadora, sartén u horno hasta que queden doraditos.</p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <span class="info-dot"></span>
-            <div>
-              <h4>Cómo acompañarlos</h4>
-              <p>Sumales frutas, yogur, pasta de maní o los toppings que más te gusten. En Instagram vas a encontrar más ideas.</p>
-            </div>
-          </div>
-        </div>
+        <p>
+          Valores aproximados por unidad. La Línea Proteica mantiene el foco funcional, mientras que la Línea SOFT ofrece una versión más liviana y sin whey.
+        </p>
       </div>
 
-      <div class="nutrition-card">
-        <div class="nutrition-head">
-          <div>
-            <h2 style="font-size: 34px; color: var(--primary);">Información nutricional</h2>
+      <div class="nutrition-lines-grid">
+
+        <div class="nutrition-line">
+          <div class="nutrition-head">
+            <div>
+              <h3>Línea Proteica</h3>
+            </div>
+            <span class="nutrition-chip">20 g proteína</span>
           </div>
-          <span class="nutrition-chip">Línea Proteica</span>
+
+          <div class="nutri-grid">
+            <div class="nutri-item">
+              <strong>218 kcal</strong>
+              <span>valor energético</span>
+            </div>
+            <div class="nutri-item">
+              <strong>20,2 g</strong>
+              <span>proteínas</span>
+            </div>
+            <div class="nutri-item">
+              <strong>9,3 g</strong>
+              <span>grasas totales</span>
+            </div>
+            <div class="nutri-item">
+              <strong>13,1 g</strong>
+              <span>carbohidratos</span>
+            </div>
+            <div class="nutri-item">
+              <strong>8,0 g</strong>
+              <span>azúcares</span>
+            </div>
+            <div class="nutri-item">
+              <strong>2,0 g</strong>
+              <span>fibra alimentaria</span>
+            </div>
+            <div class="nutri-item">
+              <strong>2,0 g</strong>
+              <span>grasas saturadas</span>
+            </div>
+            <div class="nutri-item">
+              <strong>270 mg</strong>
+              <span>sodio</span>
+            </div>
+          </div>
+
+          <div class="ingredients">
+            <strong>🧾 Ingredientes</strong>
+            <p>
+              Yogur natural, huevo, proteína de suero de leche, leche en polvo descremada, harina de almendra,
+              harina de avena, harina de lino, aromatizante vainilla, canela, leudante químico y sal.
+            </p>
+          </div>
         </div>
 
-        <div class="nutri-grid">
-          <div class="nutri-item">
-            <strong>218 kcal</strong>
-            <span>valor energético</span>
+        <div class="nutrition-line soft-nutrition">
+          <div class="nutrition-head">
+            <div>
+              <h3>Línea SOFT</h3>
+            </div>
+            <span class="nutrition-chip">Sin whey</span>
           </div>
-          <div class="nutri-item">
-            <strong>20,2 g</strong>
-            <span>proteínas</span>
+
+          <div class="nutri-grid">
+            <div class="nutri-item">
+              <strong>184 kcal</strong>
+              <span>valor energético</span>
+            </div>
+            <div class="nutri-item">
+              <strong>10,5 g</strong>
+              <span>proteínas</span>
+            </div>
+            <div class="nutri-item">
+              <strong>9,0 g</strong>
+              <span>grasas totales</span>
+            </div>
+            <div class="nutri-item">
+              <strong>16,6 g</strong>
+              <span>carbohidratos</span>
+            </div>
+            <div class="nutri-item">
+              <strong>5,9 g</strong>
+              <span>azúcares</span>
+            </div>
+            <div class="nutri-item">
+              <strong>3,2 g</strong>
+              <span>fibra alimentaria</span>
+            </div>
+            <div class="nutri-item">
+              <strong>1,5 g</strong>
+              <span>grasas saturadas</span>
+            </div>
+            <div class="nutri-item">
+              <strong>260 mg</strong>
+              <span>sodio</span>
+            </div>
           </div>
-          <div class="nutri-item">
-            <strong>9,3 g</strong>
-            <span>grasas totales</span>
-          </div>
-          <div class="nutri-item">
-            <strong>13,1 g</strong>
-            <span>carbohidratos</span>
-          </div>
-          <div class="nutri-item">
-            <strong>8,0 g</strong>
-            <span>azúcares</span>
-          </div>
-          <div class="nutri-item">
-            <strong>2,0 g</strong>
-            <span>fibra alimentaria</span>
-          </div>
-          <div class="nutri-item">
-            <strong>2,0 g</strong>
-            <span>grasas saturadas</span>
-          </div>
-          <div class="nutri-item">
-            <strong>270 mg</strong>
-            <span>sodio</span>
+
+          <div class="ingredients">
+            <strong>🧾 Ingredientes</strong>
+            <p>
+              Huevo, yogur natural, leche en polvo descremada, harina de almendra, harina de avena,
+              harina de lino, aromatizante vainilla, canela, leudante químico y sal.
+            </p>
           </div>
         </div>
 
-        <div class="ingredients">
-          <strong>🧾 Ingredientes</strong>
-          <p>
-            Yogur natural, huevo, proteína de suero de leche, leche en polvo descremada, harina de almendra,
-            harina de avena, harina de lino, aromatizante vainilla, canela, leudante químico y sal.
-          </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section enjoy-section">
+  <div class="container">
+    <div class="enjoy-card">
+      <div class="section-head">
+        <div>
+          <h2>Para disfrutarlos mejor</h2>
+        </div>
+        <p>
+          Tips simples para conservarlos, calentarlos y sumarlos a tu rutina.
+        </p>
+      </div>
+
+      <div class="enjoy-grid">
+        <div class="enjoy-item">
+          <span class="info-dot"></span>
+          <h4>Frescos y listos para guardar</h4>
+          <p>Están elaborados en el día. Al recibirlos, guardalos en freezer para tenerlos siempre a mano.</p>
+        </div>
+
+        <div class="enjoy-item">
+          <span class="info-dot"></span>
+          <h4>Cómo conservarlos</h4>
+          <p>Mantenelos en freezer y consumilos preferentemente dentro de los 2 meses.</p>
+        </div>
+
+        <div class="enjoy-item">
+          <span class="info-dot"></span>
+          <h4>Cómo calentarlos</h4>
+          <p>No hace falta descongelarlos: podés llevarlos directo a tostadora, sartén u horno hasta que queden doraditos.</p>
+        </div>
+
+        <div class="enjoy-item">
+          <span class="info-dot"></span>
+          <h4>Cómo acompañarlos</h4>
+          <p>Sumales frutas, yogur, pasta de maní o los toppings que más te gusten. En Instagram vas a encontrar más ideas.</p>
         </div>
       </div>
     </div>
