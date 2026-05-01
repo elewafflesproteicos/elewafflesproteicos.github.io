@@ -2741,19 +2741,19 @@ const TASTE_SAUCES = [
     none: true
   },
   {
-    name: "Salsa de chocolate con avellana Mrs. Taste",
+    name: "Chocolate con avellana",
     price: SAUCE_PRICE
   },
   {
-    name: "Salsa de dulce de leche Mrs. Taste",
+    name: "Dulce de leche",
     price: SAUCE_PRICE
   },
   {
-    name: "Salsa de chocolate Mrs. Taste",
+    name: "Chocolate",
     price: SAUCE_PRICE
   },
   {
-    name: "Salsa de caramelo Mrs. Taste",
+    name: "Caramelo",
     price: SAUCE_PRICE
   }
 ];
@@ -2767,7 +2767,6 @@ function createTasteSelector(packCard, index) {
 
   const optionsHtml = TASTE_SAUCES.map((sauce, sauceIndex) => {
     const checked = sauceIndex === 0 ? "checked" : "";
-    const priceLabel = sauce.price > 0 ? `<small>+$${formatPrice(sauce.price)}</small>` : "";
     const noneAttr = sauce.none ? `data-none="true"` : "";
 
     return `
@@ -2780,7 +2779,7 @@ function createTasteSelector(packCard, index) {
           ${noneAttr}
           ${checked}
         >
-        <span>${sauce.name}${priceLabel}</span>
+        <span>${sauce.name}</span>
       </label>
     `;
   }).join("");
@@ -2789,9 +2788,12 @@ function createTasteSelector(packCard, index) {
     <div class="taste-box" hidden>
       <div class="taste-head">
         <div>
-          <span class="taste-kicker">Opcional</span>
-          <h4>Sumá tu Salsa Taste</h4>
-          <p>Elegí una o más salsas para llevar tu pack al próximo nivel.</p>
+          <span class="taste-kicker">Upsell opcional</span>
+          <h4>Sumá tu salsa Mrs Taste de 335 g!</h4>
+          <p>
+            Son salsas dulces sin calorias y listas para usar, ideales para sumar arriba de tus waffles.
+            Elegí una o más para llevar tu pack al próximo nivel.
+          </p>
         </div>
 
         <div class="taste-price">+$${formatPrice(SAUCE_PRICE)} c/u</div>
